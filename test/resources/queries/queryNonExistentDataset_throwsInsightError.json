@@ -1,0 +1,18 @@
+{
+	"title": "referencing non-existent dataset throws InsightError",
+	"input": {
+		"WHERE": {
+			"GT": {
+				"sectionsInvalid_avg": 97
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sectionsInvalid_dept",
+				"sectionsInvalid_avg"
+			]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

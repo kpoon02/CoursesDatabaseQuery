@@ -1,0 +1,13 @@
+{
+	"title": "missing COLUMNS key throws InsightError",
+	"input": {
+		"WHERE": {
+			"GT": {
+				"sections_avg": 97
+			}
+		},
+		"OPTIONS": {}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

@@ -1,0 +1,19 @@
+{
+	"title": "SELECT title, year, avg WHERE dept == 'invalid'",
+	"input": {
+		"WHERE": {
+			"IS": {
+				"sections_dept": "invalid"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_title",
+				"sections_year",
+				"sections_avg"
+			]
+		}
+	},
+	"errorExpected": false,
+	"expected": []
+}
