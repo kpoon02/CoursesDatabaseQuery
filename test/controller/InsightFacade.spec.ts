@@ -1,4 +1,5 @@
 import {
+	IInsightFacade,
 	InsightDataset,
 	InsightDatasetKind,
 	InsightError,
@@ -105,27 +106,6 @@ describe("InsightFacade", function () {
 			}
 		});
 
-		it("Should list no datasets when there is nothing on disk", async function () {
-			const expected: InsightDataset[] = [];
-			const result = await insightFacade.listDatasets();
-
-			expect(result).to.deep.equal(expected);
-		});
-
-		it("Should list a single dataset", async function () {
-			await insightFacade.addDataset(id, content, InsightDatasetKind.Sections);
-			const expected: InsightDataset[] = [
-				{
-					id: "sections",
-					kind: InsightDatasetKind.Sections,
-					numRows: 64612,
-				},
-			];
-			const result = await insightFacade.listDatasets();
-
-			expect(result).to.deep.equal(expected);
-		});
-
 		it("Should list multiple datasets", async function () {
 			const id2: string = "sections2";
 			const content2: string = datasetContents.get("sections") ?? "";
@@ -147,44 +127,6 @@ describe("InsightFacade", function () {
 			expect(result).to.have.length(2);
 			expect(result).to.deep.include(expected1);
 			expect(result).to.deep.include(expected2);
-		});
-
-		it("Should remove a single dataset", async function () {
-			await insightFacade.addDataset(id, content, InsightDatasetKind.Sections);
-			const expected: InsightDataset = {
-				id: "sections",
-				kind: InsightDatasetKind.Sections,
-				numRows: 64612,
-			};
-			const result = await insightFacade.removeDataset(id);
-
-			expect(result).to.equal(id);
-			expect(await insightFacade.listDatasets()).to.not.deep.include(expected);
-		});
-
-		it("Should remove multiple datasets", async function () {
-			const id2: string = "sections2";
-			const content2: string = datasetContents.get("sections") ?? "";
-			await insightFacade.addDataset(id, content, InsightDatasetKind.Sections);
-			await insightFacade.addDataset(id2, content2, InsightDatasetKind.Sections);
-			const expected1: InsightDataset = {
-				id: "sections",
-				kind: InsightDatasetKind.Sections,
-				numRows: 64612,
-			};
-			const expected2: InsightDataset = {
-				id: "sections",
-				kind: InsightDatasetKind.Sections,
-				numRows: 64612,
-			};
-
-			let result = await insightFacade.removeDataset(id);
-			expect(result).to.equal(id);
-			expect(await insightFacade.listDatasets()).to.not.deep.include(expected1);
-
-			result = await insightFacade.removeDataset(id2);
-			expect(result).to.equal(id2);
-			expect(await insightFacade.listDatasets()).to.not.deep.include(expected2);
 		});
 
 		it("Should reject when dataset cannot be found", async function () {
@@ -214,6 +156,70 @@ describe("InsightFacade", function () {
 			} catch (err) {
 				expect(err).to.be.instanceof(InsightError);
 			}
+		});
+
+		// Katherine's tests
+		// list datasets tests
+		describe("List Datasets", function () {
+			it("should list no datasets", function () {
+				return insightFacade.listDatasets().then((insightDatasets) => {
+					expect(insightDatasets).to.be.an.instanceof(Array);
+					expect(insightDatasets).to.have.length(0);
+				});
+			});
+
+			it("should list one dataset", function () {
+				return insightFacade
+					.addDataset("sections", content, InsightDatasetKind.Sections)
+					.then((addedIds) => {
+						return insightFacade.listDatasets();
+					})
+					.then((insightDatasets) => {
+						expect(insightDatasets).to.deep.equal([
+							{
+								id: "sections",
+								kind: InsightDatasetKind.Sections,
+								numRows: 64612,
+							},
+						]);
+					});
+			});
+		});
+
+		// remove dataset tests
+		describe("Remove Datasets", function () {
+			let facade: IInsightFacade;
+
+			beforeEach(function () {
+				facade = new InsightFacade();
+			});
+
+			it("should remove only dataset successfully", function () {
+				return facade
+					.addDataset("sections", content, InsightDatasetKind.Sections)
+					.then(() => {
+						return facade.removeDataset("sections");
+					})
+					.then((insightDatasets) => {
+						expect(insightDatasets).to.be.a("string");
+						expect(insightDatasets).to.deep.equal("sections");
+					});
+			});
+
+			it("should remove dataset out of two datasets successfully", function () {
+				return facade
+					.addDataset("sections", content, InsightDatasetKind.Sections)
+					.then(() => {
+						return facade.addDataset("sections-2", content, InsightDatasetKind.Sections);
+					})
+					.then(() => {
+						return facade.removeDataset("sections");
+					})
+					.then((insightDatasets) => {
+						expect(insightDatasets).to.be.a("string");
+						expect(insightDatasets).to.deep.equal("sections");
+					});
+			});
 		});
 	});
 

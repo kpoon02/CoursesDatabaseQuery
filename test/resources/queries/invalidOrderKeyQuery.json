@@ -1,0 +1,19 @@
+{
+	"title": "invalidOrderKeyQuery",
+	"input": {
+		"WHERE": {
+			"GT": {
+				"sections_avg": 70
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_dept",
+				"sections_avg"
+			],
+			"ORDER": "avg"
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

@@ -1,0 +1,92 @@
+{
+	"title": "sectionsInstructorKeyQuery",
+	"input": {
+		"WHERE": {
+			"IS": {
+				"sections_instructor": "karlstrom, lena"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_id",
+				"sections_instructor"
+			],
+			"ORDER": "sections_id"
+		}
+	},
+	"errorExpected": false,
+	"expected": [
+		{
+			"sections_id": "100",
+			"sections_instructor": "karlstrom, lena"
+		},
+		{
+			"sections_id": "100",
+			"sections_instructor": "karlstrom, lena"
+		},
+		{
+			"sections_id": "100",
+			"sections_instructor": "karlstrom, lena"
+		},
+		{
+			"sections_id": "100",
+			"sections_instructor": "karlstrom, lena"
+		},
+		{
+			"sections_id": "100",
+			"sections_instructor": "karlstrom, lena"
+		},
+		{
+			"sections_id": "100",
+			"sections_instructor": "karlstrom, lena"
+		},
+		{
+			"sections_id": "110",
+			"sections_instructor": "karlstrom, lena"
+		},
+		{
+			"sections_id": "110",
+			"sections_instructor": "karlstrom, lena"
+		},
+		{
+			"sections_id": "110",
+			"sections_instructor": "karlstrom, lena"
+		},
+		{
+			"sections_id": "200",
+			"sections_instructor": "karlstrom, lena"
+		},
+		{
+			"sections_id": "200",
+			"sections_instructor": "karlstrom, lena"
+		},
+		{
+			"sections_id": "200",
+			"sections_instructor": "karlstrom, lena"
+		},
+		{
+			"sections_id": "210",
+			"sections_instructor": "karlstrom, lena"
+		},
+		{
+			"sections_id": "210",
+			"sections_instructor": "karlstrom, lena"
+		},
+		{
+			"sections_id": "210",
+			"sections_instructor": "karlstrom, lena"
+		},
+		{
+			"sections_id": "336",
+			"sections_instructor": "karlstrom, lena"
+		},
+		{
+			"sections_id": "336",
+			"sections_instructor": "karlstrom, lena"
+		},
+		{
+			"sections_id": "336",
+			"sections_instructor": "karlstrom, lena"
+		}
+	]
+}

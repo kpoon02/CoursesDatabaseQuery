@@ -1,0 +1,32 @@
+{
+	"title": "2WhereKeysQuery",
+	"input": {
+		"WHERE": {
+			"LT": {
+				"sections_avg": 70
+			},
+			"AND": [
+				{
+					"GT": {
+						"sections_avg": 30
+					}
+				},
+				{
+					"LT": {
+						"sections_avg": 60
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_dept",
+				"sections_id",
+				"sections_avg"
+			],
+			"ORDER": "sections_avg"
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

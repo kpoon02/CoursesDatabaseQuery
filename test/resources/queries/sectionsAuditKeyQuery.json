@@ -1,0 +1,140 @@
+{
+	"title": "sectionsAuditKeyQuery",
+	"input": {
+		"WHERE": {
+			"GT": {
+				"sections_audit": 10
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_dept",
+				"sections_avg"
+			],
+			"ORDER": "sections_avg"
+		}
+	},
+	"errorExpected": false,
+	"expected": [
+		{
+			"sections_dept": "fren",
+			"sections_avg": 73.4
+		},
+		{
+			"sections_dept": "rhsc",
+			"sections_avg": 76
+		},
+		{
+			"sections_dept": "cons",
+			"sections_avg": 76.21
+		},
+		{
+			"sections_dept": "rhsc",
+			"sections_avg": 77.65
+		},
+		{
+			"sections_dept": "frst",
+			"sections_avg": 79.64
+		},
+		{
+			"sections_dept": "frst",
+			"sections_avg": 79.64
+		},
+		{
+			"sections_dept": "cpsc",
+			"sections_avg": 80.29
+		},
+		{
+			"sections_dept": "cpsc",
+			"sections_avg": 80.29
+		},
+		{
+			"sections_dept": "rhsc",
+			"sections_avg": 81.09
+		},
+		{
+			"sections_dept": "rhsc",
+			"sections_avg": 82.56
+		},
+		{
+			"sections_dept": "biol",
+			"sections_avg": 84.38
+		},
+		{
+			"sections_dept": "biol",
+			"sections_avg": 84.38
+		},
+		{
+			"sections_dept": "rhsc",
+			"sections_avg": 84.5
+		},
+		{
+			"sections_dept": "cnto",
+			"sections_avg": 84.6
+		},
+		{
+			"sections_dept": "rhsc",
+			"sections_avg": 84.71
+		},
+		{
+			"sections_dept": "frst",
+			"sections_avg": 85.56
+		},
+		{
+			"sections_dept": "frst",
+			"sections_avg": 85.56
+		},
+		{
+			"sections_dept": "rhsc",
+			"sections_avg": 86
+		},
+		{
+			"sections_dept": "rhsc",
+			"sections_avg": 86.19
+		},
+		{
+			"sections_dept": "rhsc",
+			"sections_avg": 86.89
+		},
+		{
+			"sections_dept": "rhsc",
+			"sections_avg": 87
+		},
+		{
+			"sections_dept": "rhsc",
+			"sections_avg": 87.03
+		},
+		{
+			"sections_dept": "rhsc",
+			"sections_avg": 87.14
+		},
+		{
+			"sections_dept": "rhsc",
+			"sections_avg": 87.26
+		},
+		{
+			"sections_dept": "rhsc",
+			"sections_avg": 88
+		},
+		{
+			"sections_dept": "rhsc",
+			"sections_avg": 88.2
+		},
+		{
+			"sections_dept": "rhsc",
+			"sections_avg": 88.25
+		},
+		{
+			"sections_dept": "rhsc",
+			"sections_avg": 88.79
+		},
+		{
+			"sections_dept": "cpsc",
+			"sections_avg": 90.53
+		},
+		{
+			"sections_dept": "cpsc",
+			"sections_avg": 90.53
+		}
+	]
+}

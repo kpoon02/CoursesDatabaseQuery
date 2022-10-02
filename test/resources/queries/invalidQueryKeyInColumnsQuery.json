@@ -1,0 +1,19 @@
+{
+	"title": "invalidQueryKeyInColumnsQuery",
+	"input": {
+		"WHERE": {
+			"IS": {
+				"sections_uuid": "80294"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_ubc",
+				"sections_uuid"
+			],
+			"ORDER": "sections_title"
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

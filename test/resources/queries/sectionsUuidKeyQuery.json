@@ -1,0 +1,24 @@
+{
+	"title": "sectionsUuidKeyQuery",
+	"input": {
+		"WHERE": {
+			"IS": {
+				"sections_uuid": "80294"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_title",
+				"sections_uuid"
+			],
+			"ORDER": "sections_title"
+		}
+	},
+	"errorExpected": false,
+	"expected": [
+		{
+			"sections_title": "begin germ 2",
+			"sections_uuid": "80294"
+		}
+	]
+}

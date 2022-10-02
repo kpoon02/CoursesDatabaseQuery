@@ -1,0 +1,452 @@
+{
+	"title": "sectionsTitleKeyQuery",
+	"input": {
+		"WHERE": {
+			"IS": {
+				"sections_title": "begin germ 2"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_title",
+				"sections_instructor"
+			],
+			"ORDER": "sections_title"
+		}
+	},
+	"errorExpected": false,
+	"expected": [
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "spreter von kreudenstein, chri"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "oh, ja-hae"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "struch, gela"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "maslenikau, ihar"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "faller, florian"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "maslenikau, ihar"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "coordinator;struch, gela;svanidze, tamara"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "toor, gorsharn"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "struch, gela"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "faller, florian"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "faller, florian"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "coordinator;jones, lydia;struch, gela"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "coordinator;redlich, jeremy;struch, gela"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "maslenikau, ihar"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "faller, florian"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "hey, isolde"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "schallie, charlotte"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "schade, silke"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "toor, gorsharn"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "schenkel, guido;struch, gela"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "struch, gela"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "petro, ingrid;struch, gela"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "faller, florian"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "maslenikau, ihar"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "hempen, daniela"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "o'brien, adelheid"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "maslenikau, ihar"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "faller, florian"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "struch, gela;tba"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "struch, gela;tba"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "gassner, florian"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "hempen, daniela"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "kumar, uma"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "spreter von kreudenstein, chri"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "spreter von kreudenstein, chri"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "struch, gela"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "spreter von kreudenstein, chri"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "zaenker, karl a"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "toor, gorsharn"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "hempen, daniela"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "klibadze, dali;struch, gela"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "struch, gela;svanidze, tamara"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "faller, florian"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "maslenikau, ihar"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "struch, gela"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "struch, gela"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "o'brien, adelheid"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "faller, florian"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "faller, florian"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "sanders, travis;struch, gela"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "klibadze, dali;struch, gela"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "kumar, uma"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "toor, gorsharn"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "roy, catherine"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "struch, gela"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "faller, florian"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "lieblang, jason"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "lieblang, jason"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "kumar, uma"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "o'brien, adelheid"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "faller, florian"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "spreter von kreudenstein, chri"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "roy, catherine"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "toor, gorsharn"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "maslenikau, ihar"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "struch, gela"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "hempen, daniela"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "o'brien, adelheid"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "faller, florian"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "faller, florian"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "kumar, uma"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "maslenikau, ihar"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "maslenikau, ihar"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "laszlo, eszter"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "lieblang, jason"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "o'brien, adelheid"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "faller, florian"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "faller, florian"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": "kumar, uma"
+		},
+		{
+			"sections_title": "begin germ 2",
+			"sections_instructor": ""
+		}
+	]
+}
