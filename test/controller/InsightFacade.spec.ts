@@ -22,7 +22,8 @@ describe("InsightFacade", function () {
 	// Reference any datasets you've added to test/resources/archives here, and they will
 	// automatically be loaded in the 'before' hook.
 	const datasetsToLoad: {[key: string]: string} = {
-		sections: "./test/resources/archives/pair.zip",
+		sections: "./test/resources/archives/pair.zip", // 64612 rows
+		sectionsSomeInvalid: "./test/resources/archives/courses.zip", // 10 rows
 	};
 
 	before(function () {
@@ -37,7 +38,8 @@ describe("InsightFacade", function () {
 
 	describe("addDataset / listDataset / removeDataset", function () {
 		const id: string = "sections";
-		const content: string = datasetContents.get("sections") ?? "";
+		const id2: string = "sections2";
+		const idSectionsSomeInvalid: string = "sectionsSomeInvalid";
 
 		// before(function () {
 		// 	console.info(`Before: ${this.test?.parent?.title}`);
@@ -59,55 +61,8 @@ describe("InsightFacade", function () {
 			fs.removeSync(persistDirectory);
 		});
 
-		it("Should add a valid dataset", async function () {
-			const expected: string[] = [id];
-			const result = await insightFacade.addDataset(id, content, InsightDatasetKind.Sections);
-
-			expect(result).to.deep.equal(expected);
-		});
-
-		it("Should add multiple valid datasets", async function () {
-			const id2: string = "sections2";
-			const content2: string = datasetContents.get("sections") ?? "";
-			const expected: string[] = [id, id2];
-			await insightFacade.addDataset(id, content, InsightDatasetKind.Sections);
-			const result = await insightFacade.addDataset(id2, content2, InsightDatasetKind.Sections);
-
-			expect(result).to.deep.equal(expected);
-		});
-
-		it("Should reject datasets with underscores in id", async function () {
-			const invalidId: string = "sections_invalid";
-			try {
-				await insightFacade.addDataset(invalidId, content, InsightDatasetKind.Sections);
-				expect.fail("Should not have resolved");
-			} catch (err) {
-				expect(err).to.be.instanceof(InsightError);
-			}
-		});
-
-		it("Should reject datasets with only whitespaces in id", async function () {
-			const invalidId: string = " ";
-			try {
-				await insightFacade.addDataset(invalidId, content, InsightDatasetKind.Sections);
-				expect.fail("Should not have resolved");
-			} catch (err) {
-				expect(err).to.be.instanceof(InsightError);
-			}
-		});
-
-		it("Should reject datasets already on disk", async function () {
-			await insightFacade.addDataset(id, content, InsightDatasetKind.Sections);
-			try {
-				await insightFacade.addDataset(id, content, InsightDatasetKind.Sections);
-				expect.fail("Should not have resolved");
-			} catch (err) {
-				expect(err).to.be.instanceof(InsightError);
-			}
-		});
-
-		it("Should list multiple datasets", async function () {
-			const id2: string = "sections2";
+		async function addMultipleDatasets() {
+			const content: string = datasetContents.get("sections") ?? "";
 			const content2: string = datasetContents.get("sections") ?? "";
 			await insightFacade.addDataset(id, content, InsightDatasetKind.Sections);
 			await insightFacade.addDataset(id2, content2, InsightDatasetKind.Sections);
@@ -121,12 +76,131 @@ describe("InsightFacade", function () {
 				kind: InsightDatasetKind.Sections,
 				numRows: 64612,
 			};
+			return {expected1, expected2};
+		}
+
+		it("Should add a valid dataset", async function () {
+			const expected: string[] = [id];
+			const content: string = datasetContents.get("sections") ?? "";
+			const result = await insightFacade.addDataset(id, content, InsightDatasetKind.Sections);
+
+			expect(result).to.deep.equal(expected);
+		});
+
+		it("Should still add sections if some are missing queryable data", async function () {
+			const expected: string[] = [idSectionsSomeInvalid];
+			const content: string = datasetContents.get("sectionsSomeInvalid") ?? "";
+			const result = await insightFacade.addDataset(idSectionsSomeInvalid, content, InsightDatasetKind.Sections);
+
+			expect(result).to.deep.equal(expected);
+			// TODO need to check contents of dataset once listDataset is implemented
+		});
+
+		it("Should add multiple valid datasets", async function () {
+			const content: string = datasetContents.get("sections") ?? "";
+			const content2: string = datasetContents.get("sections") ?? "";
+			const expected: string[] = [id, id2];
+			await insightFacade.addDataset(id, content, InsightDatasetKind.Sections);
+			const result = await insightFacade.addDataset(id2, content2, InsightDatasetKind.Sections);
+
+			expect(result).to.deep.equal(expected);
+		});
+
+		it("Should reject datasets with underscores in id", async function () {
+			const invalidId: string = "sections_invalid";
+			const content: string = datasetContents.get("sections") ?? "";
+			try {
+				await insightFacade.addDataset(invalidId, content, InsightDatasetKind.Sections);
+				expect.fail("Should not have resolved");
+			} catch (err) {
+				expect(err).to.be.instanceof(InsightError);
+			}
+		});
+
+		it("Should reject datasets with only whitespaces in id", async function () {
+			const invalidId: string = " ";
+			const content: string = datasetContents.get("sections") ?? "";
+			try {
+				await insightFacade.addDataset(invalidId, content, InsightDatasetKind.Sections);
+				expect.fail("Should not have resolved");
+			} catch (err) {
+				expect(err).to.be.instanceof(InsightError);
+			}
+		});
+
+		it("Should reject datasets already on disk", async function () {
+			const content: string = datasetContents.get("sections") ?? "";
+			await insightFacade.addDataset(id, content, InsightDatasetKind.Sections);
+			try {
+				await insightFacade.addDataset(id, content, InsightDatasetKind.Sections);
+				expect.fail("Should not have resolved");
+			} catch (err) {
+				expect(err).to.be.instanceof(InsightError);
+			}
+		});
+
+		it("should list no datasets", function () {
+			return insightFacade.listDatasets().then((insightDatasets) => {
+				expect(insightDatasets).to.be.an.instanceof(Array);
+				expect(insightDatasets).to.have.length(0);
+			});
+		});
+
+		it("should list one dataset", function () {
+			const content: string = datasetContents.get("sections") ?? "";
+			return insightFacade
+				.addDataset("sections", content, InsightDatasetKind.Sections)
+				.then(() => {
+					return insightFacade.listDatasets();
+				})
+				.then((insightDatasets) => {
+					expect(insightDatasets).to.deep.equal([
+						{
+							id: "sections",
+							kind: InsightDatasetKind.Sections,
+							numRows: 64612,
+						},
+					]);
+				});
+		});
+
+		it("Should list multiple datasets", async function () {
+			const {expected1, expected2} = await addMultipleDatasets();
 			const result = await insightFacade.listDatasets();
 
 			expect(result).to.be.instanceof(Array);
 			expect(result).to.have.length(2);
 			expect(result).to.deep.include(expected1);
 			expect(result).to.deep.include(expected2);
+		});
+
+		it("should remove only dataset successfully", function () {
+			const content: string = datasetContents.get("sections") ?? "";
+			return insightFacade
+				.addDataset("sections", content, InsightDatasetKind.Sections)
+				.then(() => {
+					return insightFacade.removeDataset("sections");
+				})
+				.then((insightDatasets) => {
+					expect(insightDatasets).to.be.a("string");
+					expect(insightDatasets).to.deep.equal("sections");
+				});
+		});
+
+		it("should remove dataset out of two datasets successfully", function () {
+			const content: string = datasetContents.get("sections") ?? "";
+			return insightFacade
+				.addDataset("sections", content, InsightDatasetKind.Sections)
+				.then(() => {
+					return insightFacade.addDataset("sections-2", content, InsightDatasetKind.Sections);
+				})
+				.then(() => {
+					return insightFacade.removeDataset("sections");
+				})
+				.then((insightDatasets) => {
+					expect(insightDatasets).to.be.a("string");
+					expect(insightDatasets).to.deep.equal("sections");
+				});
 		});
 
 		it("Should reject when dataset cannot be found", async function () {
@@ -156,70 +230,6 @@ describe("InsightFacade", function () {
 			} catch (err) {
 				expect(err).to.be.instanceof(InsightError);
 			}
-		});
-
-		// Katherine's tests
-		// list datasets tests
-		describe("List Datasets", function () {
-			it("should list no datasets", function () {
-				return insightFacade.listDatasets().then((insightDatasets) => {
-					expect(insightDatasets).to.be.an.instanceof(Array);
-					expect(insightDatasets).to.have.length(0);
-				});
-			});
-
-			it("should list one dataset", function () {
-				return insightFacade
-					.addDataset("sections", content, InsightDatasetKind.Sections)
-					.then((addedIds) => {
-						return insightFacade.listDatasets();
-					})
-					.then((insightDatasets) => {
-						expect(insightDatasets).to.deep.equal([
-							{
-								id: "sections",
-								kind: InsightDatasetKind.Sections,
-								numRows: 64612,
-							},
-						]);
-					});
-			});
-		});
-
-		// remove dataset tests
-		describe("Remove Datasets", function () {
-			let facade: IInsightFacade;
-
-			beforeEach(function () {
-				facade = new InsightFacade();
-			});
-
-			it("should remove only dataset successfully", function () {
-				return facade
-					.addDataset("sections", content, InsightDatasetKind.Sections)
-					.then(() => {
-						return facade.removeDataset("sections");
-					})
-					.then((insightDatasets) => {
-						expect(insightDatasets).to.be.a("string");
-						expect(insightDatasets).to.deep.equal("sections");
-					});
-			});
-
-			it("should remove dataset out of two datasets successfully", function () {
-				return facade
-					.addDataset("sections", content, InsightDatasetKind.Sections)
-					.then(() => {
-						return facade.addDataset("sections-2", content, InsightDatasetKind.Sections);
-					})
-					.then(() => {
-						return facade.removeDataset("sections");
-					})
-					.then((insightDatasets) => {
-						expect(insightDatasets).to.be.a("string");
-						expect(insightDatasets).to.deep.equal("sections");
-					});
-			});
 		});
 	});
 
