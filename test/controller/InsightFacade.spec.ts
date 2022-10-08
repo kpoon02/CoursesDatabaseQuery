@@ -1,5 +1,4 @@
 import {
-	IInsightFacade,
 	InsightDataset,
 	InsightDatasetKind,
 	InsightError,
@@ -23,7 +22,8 @@ describe("InsightFacade", function () {
 	// automatically be loaded in the 'before' hook.
 	const datasetsToLoad: {[key: string]: string} = {
 		sections: "./test/resources/archives/pair.zip", // 64612 rows
-		sectionsSomeInvalid: "./test/resources/archives/courses.zip", // 10 rows
+		sectionsSomeInvalid: "./test/resources/archives/courses.zip", // 11 rows
+		sectionsInvalidRootFolder: "./test/resources/archives/not_courses.zip",
 	};
 
 	before(function () {
@@ -40,6 +40,7 @@ describe("InsightFacade", function () {
 		const id: string = "sections";
 		const id2: string = "sections2";
 		const idSectionsSomeInvalid: string = "sectionsSomeInvalid";
+		const idSectionsInvalidRootFolder: string = "sectionsInvalidRootFolder";
 
 		// before(function () {
 		// 	console.info(`Before: ${this.test?.parent?.title}`);
@@ -89,11 +90,12 @@ describe("InsightFacade", function () {
 
 		it("Should still add sections if some are missing queryable data", async function () {
 			const expected: string[] = [idSectionsSomeInvalid];
-			const content: string = datasetContents.get("sectionsSomeInvalid") ?? "";
+			const content: string = datasetContents.get(idSectionsSomeInvalid) ?? "";
 			const result = await insightFacade.addDataset(idSectionsSomeInvalid, content, InsightDatasetKind.Sections);
 
 			expect(result).to.deep.equal(expected);
-			// TODO need to check contents of dataset once listDataset is implemented
+			const result2 = await insightFacade.listDatasets();
+			expect(result2[0].numRows).to.equal(11);
 		});
 
 		it("Should add multiple valid datasets", async function () {
@@ -137,6 +139,25 @@ describe("InsightFacade", function () {
 			} catch (err) {
 				expect(err).to.be.instanceof(InsightError);
 			}
+		});
+
+		it("Should reject zip file without 'courses' root folder", async function () {
+			const content: string = datasetContents.get(idSectionsInvalidRootFolder) ?? "";
+			try {
+				await insightFacade.addDataset(id, content, InsightDatasetKind.Sections);
+				expect.fail("Should not have resolved");
+			} catch (err) {
+				expect(err).to.be.instanceof(InsightError);
+			}
+		});
+
+		it("Should load datasets on disk", async function () {
+			const content: string = datasetContents.get("sections") ?? "";
+			await insightFacade.addDataset(id, content, InsightDatasetKind.Sections);
+			const insightFacade2 = new InsightFacade();
+			const expected1 = await insightFacade.listDatasets();
+			const expected2 = await insightFacade2.listDatasets();
+			expect(expected1).to.deep.equal(expected2);
 		});
 
 		it("should list no datasets", function () {

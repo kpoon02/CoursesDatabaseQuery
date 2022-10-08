@@ -21,4 +21,8 @@ export class SectionDataset {
 	public getNumRows(): number {
 		return this.datasetInfo.numRows;
 	}
+
+	public getInsightDataset(): InsightDataset {
+		return this.datasetInfo;
+	}
 }
