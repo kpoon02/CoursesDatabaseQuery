@@ -188,7 +188,24 @@ export default class InsightFacade implements IInsightFacade {
 	}
 
 	public removeDataset(id: string): Promise<string> {
-		return Promise.reject("Not implemented.");
+		if (id.includes("_")) {
+			throw new InsightError("Dataset IDs cannot contain underscores");
+		}
+		const regex: RegExp = /^\s+$/;
+		if (regex.test(id)) {
+			throw new InsightError("Dataset IDs cannot consist of only white space");
+		}
+		const dir = "./data";
+		if (fs.existsSync(dir)) {
+			const files = fs.readdirSync(dir);
+			for (const file of files) {
+				if (file === id + ".json") {
+					fs.removeSync(dir + "/" + file);
+					return Promise.resolve(id);
+				}
+			}
+		}
+		throw new NotFoundError("Dataset ID not found");
 	}
 
 	public performQuery(query: unknown): Promise<InsightResult[]> {
