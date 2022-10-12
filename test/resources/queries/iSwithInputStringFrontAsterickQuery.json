@@ -1,0 +1,1796 @@
+{
+	"title": "iSwithInputStringFrontAsterickQuery",
+	"input": {
+		"WHERE": {
+			"IS": {
+				"sections_dept": "*at"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_dept",
+				"sections_avg"
+			],
+			"ORDER": "sections_avg"
+		}
+	},
+	"errorExpected": false,
+	"expected": [
+		{
+			"sections_dept": "stat",
+			"sections_avg": 60.6
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 60.6
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 61.67
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 61.67
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 62.69
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 63.9
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 64.91
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 65.07
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 65.12
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 65.27
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 65.31
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 65.71
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 65.71
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 65.86
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 66.21
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 66.21
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 66.68
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 66.68
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 66.72
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 66.84
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 67.03
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 67.2
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 67.55
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 68.08
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 68.08
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 68.17
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 68.18
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 68.24
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 68.24
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 68.43
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 68.53
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 68.53
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 68.57
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 68.57
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 68.59
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 68.6
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 68.6
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 68.62
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 68.68
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 68.73
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 68.73
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 68.88
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 68.9
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 68.92
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 69
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 69.03
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 69.03
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 69.06
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 69.11
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 69.11
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 69.2
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 69.2
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 69.23
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 69.23
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 69.25
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 69.53
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 69.53
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 69.63
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 69.75
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 69.84
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 69.86
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 69.86
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 69.96
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 70.38
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 70.39
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 70.41
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 70.43
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 70.43
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 70.49
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 70.53
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 70.53
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 70.59
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 70.59
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 70.6
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 70.61
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 70.66
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 70.67
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 70.69
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 70.76
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 70.77
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 70.83
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 70.86
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 70.86
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 70.92
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 70.99
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 70.99
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.02
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.06
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.07
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.09
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.09
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.14
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.17
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.19
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.19
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.28
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.28
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.3
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.33
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.38
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.41
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.42
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.47
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.47
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.48
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.53
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.56
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.57
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.6
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.6
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.61
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.62
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.62
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.65
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.72
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.73
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.73
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.74
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.74
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.76
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.77
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.77
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.78
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.78
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.79
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.87
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.87
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.9
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.95
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.97
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 71.99
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.01
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.04
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.04
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.08
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.08
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.11
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.11
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.18
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.21
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.24
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.24
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.27
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.27
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.3
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.32
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.33
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.33
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.33
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.38
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.42
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.46
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.46
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.48
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.5
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.54
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.59
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.6
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.6
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.63
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.65
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.66
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.66
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.71
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.74
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.75
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.75
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.76
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.77
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.77
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.81
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.93
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 72.97
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.02
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.06
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.07
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.12
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.13
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.14
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.17
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.18
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.25
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.3
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.47
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.49
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.53
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.53
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.54
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.56
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.57
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.67
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.68
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.68
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.69
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.71
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.77
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.77
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.79
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.79
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.79
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.85
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.85
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.93
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 73.99
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.04
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.07
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.17
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.17
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.25
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.27
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.3
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.31
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.31
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.33
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.33
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.38
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.39
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.47
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.47
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.53
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.66
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.75
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.81
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.83
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.83
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.85
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.85
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.96
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.98
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 74.98
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 75
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 75
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 75.12
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 75.28
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 75.37
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 75.37
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 75.46
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 75.47
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 75.5
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 75.57
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 75.67
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 75.67
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 75.74
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 75.76
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 75.81
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 75.81
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 75.83
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 75.83
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 75.87
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 75.87
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 75.88
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 75.88
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 75.89
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 75.93
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 75.97
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 76
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 76.1
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 76.3
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 76.49
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 76.5
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 76.5
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 76.51
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 76.54
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 76.66
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 76.66
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 76.67
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 76.8
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 76.81
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 77.11
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 77.22
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 77.22
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 77.31
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 77.31
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 77.41
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 77.41
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 77.84
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 77.84
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 78.25
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 78.25
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 78.72
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 78.75
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 78.75
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 79.24
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 79.67
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 79.67
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 79.75
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 79.79
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 79.79
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 79.92
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 79.92
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 80.17
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 80.17
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 80.28
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 80.28
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 80.86
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 80.86
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 81.41
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 81.41
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 81.71
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 81.71
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 81.75
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 81.75
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 81.82
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 81.82
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 82.08
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 82.29
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 82.29
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 82.33
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 82.33
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 82.5
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 82.5
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 82.57
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 82.57
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 82.6
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 82.6
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 82.86
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 82.86
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 83
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 83
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 83.31
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 83.31
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 83.34
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 83.34
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 83.6
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 83.6
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 83.65
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 83.65
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 83.73
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 83.73
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 83.74
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 83.74
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 84.44
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 84.44
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 84.79
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 84.79
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 84.9
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 84.9
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 85.29
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 85.29
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 85.33
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 85.33
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 85.4
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 85.4
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 85.4
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 85.4
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 85.5
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 85.5
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 85.5
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 85.5
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 85.7
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 85.7
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 86.29
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 86.29
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 86.5
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 86.63
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 86.63
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 86.67
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 86.67
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 86.71
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 86.71
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 86.76
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 86.76
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 86.95
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 86.95
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 87
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 87
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 87
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 87.11
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 87.11
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 87.15
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 87.15
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 87.33
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 87.33
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 87.67
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 87.67
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 87.8
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 87.8
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 87.93
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 88
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 88
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 88.09
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 88.09
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 88.13
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 88.13
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 88.18
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 88.18
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 88.2
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 88.25
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 88.25
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 88.5
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 88.5
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 88.73
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 88.73
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 88.78
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 88.78
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 88.83
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 88.83
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 89.23
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 89.23
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 89.25
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 89.25
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 89.36
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 89.36
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 89.57
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 89.57
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 89.59
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 89.59
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 89.6
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 89.6
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 89.72
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 89.72
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 89.75
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 89.75
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 89.75
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 89.75
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 89.82
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 89.82
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 89.83
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 89.83
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 89.86
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 89.86
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 90.29
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 90.29
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 90.29
+		},
+		{
+			"sections_dept": "gsat",
+			"sections_avg": 90.29
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 90.9
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 90.9
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 91.67
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 91.67
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 91.73
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 91.73
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 92
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 92
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 92
+		},
+		{
+			"sections_dept": "anat",
+			"sections_avg": 92
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 93
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 93
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 94.7
+		},
+		{
+			"sections_dept": "stat",
+			"sections_avg": 94.7
+		}
+	]
+}

@@ -1,5 +1,5 @@
 {
-	"title": "invalidOrderKeyQuery",
+	"title": "invalidOrderKeyQuery throws InsightError",
 	"input": {
 		"WHERE": {
 			"GT": {

@@ -1,5 +1,5 @@
 {
-	"title": "invalidQueryKeyInColumnsQuery",
+	"title": "invalidQueryKeyInColumnsQuery throws InsightError",
 	"input": {
 		"WHERE": {
 			"IS": {

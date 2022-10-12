@@ -1,5 +1,5 @@
 {
-	"title": "invalidKeyTypeGTQuery",
+	"title": "invalidKeyTypeGTQuery throws InsightError",
 	"input": {
 		"WHERE": {
 			"GT": {

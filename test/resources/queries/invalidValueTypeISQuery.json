@@ -1,5 +1,5 @@
 {
-	"title": "invalidValueTypeISQuery",
+	"title": "invalidValueTypeISQuery throws InsightError",
 	"input": {
 		"WHERE": {
 			"IS": {

@@ -1,14 +1,16 @@
 {
-	"title": "errorOrderKeyNotInColumnsQuery throws InsightError",
+	"title": "multipleDifferentKeyinGTQuery_IE",
 	"input": {
 		"WHERE": {
-			"IS": {
-				"sections_id": "math"
+			"GT": {
+				"sections_fail": "string",
+				"sections_avg": 96
 			}
 		},
 		"OPTIONS": {
 			"COLUMNS": [
-				"sections_id"
+				"sections_dept",
+				"sections_avg"
 			],
 			"ORDER": "sections_avg"
 		}

@@ -10,6 +10,8 @@ import {SectionDataset} from "../model/SectionDataset";
 import JSZip from "jszip";
 import * as fs from "fs-extra";
 import {Section} from "../model/Section";
+import {ValidateQueryFunctions} from "./ValidateQueryFunctions";
+import {Query} from "../model/Query";
 
 interface JsonCourse {
 	result: JsonSection[];
@@ -209,7 +211,45 @@ export default class InsightFacade implements IInsightFacade {
 	}
 
 	public performQuery(query: unknown): Promise<InsightResult[]> {
+		// using type predicates to ensure input query is of type Query
+		function isQuery(q: unknown): q is Query {
+			return q !== null && q !== undefined && typeof q === "object" && (q as Query).WHERE !== undefined &&
+				(q as Query).OPTIONS !== undefined && (q as Query).OPTIONS.COLUMNS !== undefined;
+		}
+		if (isQuery(query)) {
+			if (this.validateQuery(query)) {
+				// performQuery
+			} else {
+				return Promise.reject(new InsightError("Not a valid query."));
+			}
+		} else {
+			return Promise.reject(new InsightError("Not a query."));
+		}
 		return Promise.reject("Not implemented.");
+	}
+
+	public validateQuery(q: Query): boolean {
+		// check if query refers to dataset that has been added to disk
+		if (q.OPTIONS.COLUMNS.length === 0 || q.OPTIONS.COLUMNS === undefined) {
+			return false;
+		} else {
+			let datasetId: string;
+			datasetId = q.OPTIONS.COLUMNS[0].split("_")[0];
+			if (this.datasetIdInDisk(datasetId)) {
+				return (ValidateQueryFunctions.validateWHERE(q) && ValidateQueryFunctions.validateOPTIONS(q));
+			} else {
+				return false;
+			}
+		}
+	}
+
+	public datasetIdInDisk(datasetId: string): boolean {
+		for (let sectionDataset of this.datasets) {
+			if (datasetId === sectionDataset.getId()) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public listDatasets(): Promise<InsightDataset[]> {

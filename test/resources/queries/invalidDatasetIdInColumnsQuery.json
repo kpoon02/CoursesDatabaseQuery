@@ -1,5 +1,5 @@
 {
-	"title": "invalidDatasetIdInColumnsQuery",
+	"title": "invalidDatasetIdInColumnsQuery throws InsightError",
 	"input": {
 		"WHERE": {
 			"IS": {
