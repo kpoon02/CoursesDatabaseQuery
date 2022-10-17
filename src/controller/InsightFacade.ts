@@ -12,6 +12,7 @@ import * as fs from "fs-extra";
 import {Section} from "../model/Section";
 import {ValidateQueryFunctions} from "./ValidateQueryFunctions";
 import {Query} from "../model/Query";
+import {PerformQueryFunctions} from "./PerformQueryFunctions";
 
 interface JsonCourse {
 	result: JsonSection[];
@@ -22,12 +23,13 @@ export interface JsonSection {
 	id: string; // Section UUID
 	Professor: string; // Section INSTRUCTOR
 	Audit: number;
-	Year: number;
+	Year: string;
 	Course: string; // Section ID
 	Pass: number;
 	Fail: number;
 	Avg: number;
 	Subject: string; // Section DEPT
+	Section: string;
 }
 
 interface JsonDataset {
@@ -213,43 +215,33 @@ export default class InsightFacade implements IInsightFacade {
 	public performQuery(query: unknown): Promise<InsightResult[]> {
 		// using type predicates to ensure input query is of type Query
 		function isQuery(q: unknown): q is Query {
-			return q !== null && q !== undefined && typeof q === "object" && (q as Query).WHERE !== undefined &&
-				(q as Query).OPTIONS !== undefined && (q as Query).OPTIONS.COLUMNS !== undefined;
+			return (
+				q !== null &&
+				q !== undefined &&
+				typeof q === "object" &&
+				(q as Query).WHERE !== undefined &&
+				(q as Query).OPTIONS !== undefined &&
+				(q as Query).OPTIONS.COLUMNS !== undefined
+			);
 		}
+
 		if (isQuery(query)) {
-			if (this.validateQuery(query)) {
-				// performQuery
+			if (ValidateQueryFunctions.validateQuery(query, this.datasets)) {
+				return Promise.resolve(
+					PerformQueryFunctions.performOPTIONS(
+						query,
+						PerformQueryFunctions.performWHERE(
+							query,
+							PerformQueryFunctions.getQueriedSectionDataset(query, this.datasets)
+						)
+					)
+				);
 			} else {
 				return Promise.reject(new InsightError("Not a valid query."));
 			}
 		} else {
 			return Promise.reject(new InsightError("Not a query."));
 		}
-		return Promise.reject("Not implemented.");
-	}
-
-	public validateQuery(q: Query): boolean {
-		// check if query refers to dataset that has been added to disk
-		if (q.OPTIONS.COLUMNS.length === 0 || q.OPTIONS.COLUMNS === undefined) {
-			return false;
-		} else {
-			let datasetId: string;
-			datasetId = q.OPTIONS.COLUMNS[0].split("_")[0];
-			if (this.datasetIdInDisk(datasetId)) {
-				return (ValidateQueryFunctions.validateWHERE(q) && ValidateQueryFunctions.validateOPTIONS(q));
-			} else {
-				return false;
-			}
-		}
-	}
-
-	public datasetIdInDisk(datasetId: string): boolean {
-		for (let sectionDataset of this.datasets) {
-			if (datasetId === sectionDataset.getId()) {
-				return true;
-			}
-		}
-		return false;
 	}
 
 	public listDatasets(): Promise<InsightDataset[]> {

@@ -1,5 +1,5 @@
 {
-	"title": "2WhereKeysQuery throws InsightError",
+	"title": "2filterKeys throws InsightError",
 	"input": {
 		"WHERE": {
 			"LT": {

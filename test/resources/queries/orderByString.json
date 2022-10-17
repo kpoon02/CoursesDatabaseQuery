@@ -1,0 +1,137 @@
+{
+	"title": "orderByString",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"sections_dept": "adhe"
+					}
+				},
+				{
+					"GT": {
+						"sections_avg": 90
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_dept",
+				"sections_uuid",
+				"sections_id",
+				"sections_title",
+				"sections_instructor"
+			],
+			"ORDER": "sections_instructor"
+		}
+	},
+	"errorExpected": false,
+	"expected": [
+		{
+			"sections_dept": "adhe",
+			"sections_uuid": "85075",
+			"sections_id": "330",
+			"sections_title": "com adult educ",
+			"sections_instructor": ""
+		},
+		{
+			"sections_dept": "adhe",
+			"sections_uuid": "46425",
+			"sections_id": "330",
+			"sections_title": "com adult educ",
+			"sections_instructor": ""
+		},
+		{
+			"sections_dept": "adhe",
+			"sections_uuid": "19184",
+			"sections_id": "329",
+			"sections_title": "dev wkshp/sem",
+			"sections_instructor": ""
+		},
+		{
+			"sections_dept": "adhe",
+			"sections_uuid": "91932",
+			"sections_id": "330",
+			"sections_title": "com adult educ",
+			"sections_instructor": "bishundayal, deonarine"
+		},
+		{
+			"sections_dept": "adhe",
+			"sections_uuid": "85074",
+			"sections_id": "330",
+			"sections_title": "com adult educ",
+			"sections_instructor": "bishundayal, deonarine"
+		},
+		{
+			"sections_dept": "adhe",
+			"sections_uuid": "79479",
+			"sections_id": "330",
+			"sections_title": "com adult educ",
+			"sections_instructor": "bishundayal, deonarine"
+		},
+		{
+			"sections_dept": "adhe",
+			"sections_uuid": "75628",
+			"sections_id": "330",
+			"sections_title": "com adult educ",
+			"sections_instructor": "bishundayal, deonarine"
+		},
+		{
+			"sections_dept": "adhe",
+			"sections_uuid": "46423",
+			"sections_id": "330",
+			"sections_title": "com adult educ",
+			"sections_instructor": "bishundayal, deonarine"
+		},
+		{
+			"sections_dept": "adhe",
+			"sections_uuid": "19187",
+			"sections_id": "330",
+			"sections_title": "com adult educ",
+			"sections_instructor": "bishundayal, deonarine"
+		},
+		{
+			"sections_dept": "adhe",
+			"sections_uuid": "68543",
+			"sections_id": "329",
+			"sections_title": "dev wkshp/sem",
+			"sections_instructor": "bishundayal, deonarine"
+		},
+		{
+			"sections_dept": "adhe",
+			"sections_uuid": "68540",
+			"sections_id": "329",
+			"sections_title": "dev wkshp/sem",
+			"sections_instructor": "bishundayal, deonarine"
+		},
+		{
+			"sections_dept": "adhe",
+			"sections_uuid": "68539",
+			"sections_id": "329",
+			"sections_title": "dev wkshp/sem",
+			"sections_instructor": "bishundayal, deonarine"
+		},
+		{
+			"sections_dept": "adhe",
+			"sections_uuid": "19182",
+			"sections_id": "329",
+			"sections_title": "dev wkshp/sem",
+			"sections_instructor": "bishundayal, deonarine"
+		},
+		{
+			"sections_dept": "adhe",
+			"sections_uuid": "78875",
+			"sections_id": "412",
+			"sections_title": "adul educ",
+			"sections_instructor": "falk, clifford"
+		},
+		{
+			"sections_dept": "adhe",
+			"sections_uuid": "68557",
+			"sections_id": "412",
+			"sections_title": "adul educ",
+			"sections_instructor": "vanwynsberghe, robert"
+		}
+	]
+}

@@ -25,4 +25,8 @@ export class SectionDataset {
 	public getInsightDataset(): InsightDataset {
 		return this.datasetInfo;
 	}
+
+	public getSections(): Section[] {
+		return this.sections;
+	}
 }

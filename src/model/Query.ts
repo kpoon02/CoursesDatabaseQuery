@@ -1,16 +1,16 @@
 export interface Query {
-	WHERE:   Where;
+	WHERE: Where;
 	OPTIONS: Options;
 }
 
 export interface Options {
 	COLUMNS: string[];
-	ORDER?:   string;
+	ORDER?: string;
 }
 
 export interface Or {
 	AND?: And[];
-	OR?: Or[]
+	OR?: Or[];
 	LT?: Lt;
 	GT?: Gt;
 	EQ?: Eq;
@@ -20,7 +20,7 @@ export interface Or {
 
 export interface Where {
 	AND?: And[];
-	OR?: Or[]
+	OR?: Or[];
 	LT?: Lt;
 	GT?: Gt;
 	EQ?: Eq;
@@ -30,7 +30,7 @@ export interface Where {
 
 export interface And {
 	AND?: And[];
-	OR?: Or[]
+	OR?: Or[];
 	LT?: Lt;
 	GT?: Gt;
 	EQ?: Eq;
@@ -52,7 +52,7 @@ export interface Eq {
 
 export interface Not {
 	AND?: And[];
-	OR?: Or[]
+	OR?: Or[];
 	LT?: Lt;
 	GT?: Gt;
 	EQ?: Eq;

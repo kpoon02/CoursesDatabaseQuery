@@ -21,8 +21,12 @@ export class Section {
 		this._pass = jsonSection.Pass;
 		this._fail = jsonSection.Fail;
 		this._audit = jsonSection.Audit;
-		this._uuid = jsonSection.id;
-		this._year = jsonSection.Year;
+		this._uuid = "" + jsonSection.id;
+		if (jsonSection.Section === "overall") {
+			this._year = 1900;
+		} else {
+			this._year = +jsonSection.Year;
+		}
 	}
 
 	public get dept(): string {
@@ -63,5 +67,31 @@ export class Section {
 
 	public get year(): number {
 		return this._year;
+	}
+
+	public getProp(prop: string): string | number {
+		if (prop === "dept") {
+			return this._dept;
+		} else if (prop === "id") {
+			return this._id;
+		} else if (prop === "avg") {
+			return this._avg;
+		} else if (prop === "instructor") {
+			return this._instructor;
+		} else if (prop === "title") {
+			return this._title;
+		} else if (prop === "pass") {
+			return this._pass;
+		} else if (prop === "fail") {
+			return this._fail;
+		} else if (prop === "audit") {
+			return this._audit;
+		} else if (prop === "uuid") {
+			return this._uuid;
+		} else if (prop === "year") {
+			return this._year;
+		} else {
+			throw new Error();
+		}
 	}
 }

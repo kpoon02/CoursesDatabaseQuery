@@ -290,6 +290,9 @@ describe("InsightFacade", function () {
 			(input) => insightFacade.performQuery(input),
 			"./test/resources/queries",
 			{
+				assertOnResult: (actual, expected) => {
+					expect(actual).to.have.deep.members(expected);
+				},
 				errorValidator: (error): error is PQErrorKind =>
 					error === "ResultTooLargeError" || error === "InsightError",
 				assertOnError: (actual, expected) => {
