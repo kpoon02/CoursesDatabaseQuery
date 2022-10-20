@@ -1,0 +1,28 @@
+{
+	"title": "double underscore in key",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"sections_de_pt": "*"
+					}
+				},
+				{
+					"EQ": {
+						"sections_av_g": 88
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_de_pt",
+				"sections_av_g"
+			],
+			"ORDER": "sections_av_g"
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

@@ -1,0 +1,15 @@
+{
+	"title": "WHERE is an array",
+	"input": {
+		"WHERE": [],
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_de_pt",
+				"sections_av_g"
+			],
+			"ORDER": "sections_av_g"
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

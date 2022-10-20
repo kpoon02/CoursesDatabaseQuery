@@ -1,0 +1,18 @@
+{
+	"title": "more than 1 MCOMP key throws InsightError",
+	"input": {
+		"WHERE": {
+			"GT": {
+				"sections_avg": 97,
+				"sections_fail": 1
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_avg"
+			]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

@@ -1,0 +1,28 @@
+{
+	"title": "uppercase key",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"sections_DEPT": "cpsc"
+					}
+				},
+				{
+					"EQ": {
+						"sections_avg": 88
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_dept",
+				"sections_avg"
+			],
+			"ORDER": "sections_avg"
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

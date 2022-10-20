@@ -1,0 +1,733 @@
+{
+	"title": "multiple OPTIONS keys",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"sections_dept": "*"
+					}
+				},
+				{
+					"EQ": {
+						"sections_avg": 88
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_dept"
+			],
+			"ORDER": "sections_dept"
+		}
+	},
+	"errorExpected": false,
+	"expected": [
+		{
+			"sections_dept": "adhe"
+		},
+		{
+			"sections_dept": "anth"
+		},
+		{
+			"sections_dept": "anth"
+		},
+		{
+			"sections_dept": "apsc"
+		},
+		{
+			"sections_dept": "arch"
+		},
+		{
+			"sections_dept": "arch"
+		},
+		{
+			"sections_dept": "arth"
+		},
+		{
+			"sections_dept": "audi"
+		},
+		{
+			"sections_dept": "audi"
+		},
+		{
+			"sections_dept": "audi"
+		},
+		{
+			"sections_dept": "audi"
+		},
+		{
+			"sections_dept": "audi"
+		},
+		{
+			"sections_dept": "audi"
+		},
+		{
+			"sections_dept": "audi"
+		},
+		{
+			"sections_dept": "audi"
+		},
+		{
+			"sections_dept": "audi"
+		},
+		{
+			"sections_dept": "audi"
+		},
+		{
+			"sections_dept": "bams"
+		},
+		{
+			"sections_dept": "bams"
+		},
+		{
+			"sections_dept": "bmeg"
+		},
+		{
+			"sections_dept": "bmeg"
+		},
+		{
+			"sections_dept": "caps"
+		},
+		{
+			"sections_dept": "caps"
+		},
+		{
+			"sections_dept": "cell"
+		},
+		{
+			"sections_dept": "cell"
+		},
+		{
+			"sections_dept": "chbe"
+		},
+		{
+			"sections_dept": "chbe"
+		},
+		{
+			"sections_dept": "chem"
+		},
+		{
+			"sections_dept": "chem"
+		},
+		{
+			"sections_dept": "chil"
+		},
+		{
+			"sections_dept": "chil"
+		},
+		{
+			"sections_dept": "cnps"
+		},
+		{
+			"sections_dept": "cnps"
+		},
+		{
+			"sections_dept": "cnps"
+		},
+		{
+			"sections_dept": "cnps"
+		},
+		{
+			"sections_dept": "cnps"
+		},
+		{
+			"sections_dept": "cnps"
+		},
+		{
+			"sections_dept": "cnps"
+		},
+		{
+			"sections_dept": "cnps"
+		},
+		{
+			"sections_dept": "cogs"
+		},
+		{
+			"sections_dept": "cpsc"
+		},
+		{
+			"sections_dept": "cpsc"
+		},
+		{
+			"sections_dept": "cpsc"
+		},
+		{
+			"sections_dept": "cpsc"
+		},
+		{
+			"sections_dept": "cpsc"
+		},
+		{
+			"sections_dept": "cpsc"
+		},
+		{
+			"sections_dept": "dent"
+		},
+		{
+			"sections_dept": "dent"
+		},
+		{
+			"sections_dept": "dent"
+		},
+		{
+			"sections_dept": "dent"
+		},
+		{
+			"sections_dept": "dent"
+		},
+		{
+			"sections_dept": "dent"
+		},
+		{
+			"sections_dept": "dent"
+		},
+		{
+			"sections_dept": "dent"
+		},
+		{
+			"sections_dept": "dent"
+		},
+		{
+			"sections_dept": "dhyg"
+		},
+		{
+			"sections_dept": "dhyg"
+		},
+		{
+			"sections_dept": "econ"
+		},
+		{
+			"sections_dept": "econ"
+		},
+		{
+			"sections_dept": "econ"
+		},
+		{
+			"sections_dept": "econ"
+		},
+		{
+			"sections_dept": "econ"
+		},
+		{
+			"sections_dept": "econ"
+		},
+		{
+			"sections_dept": "econ"
+		},
+		{
+			"sections_dept": "edcp"
+		},
+		{
+			"sections_dept": "edcp"
+		},
+		{
+			"sections_dept": "edcp"
+		},
+		{
+			"sections_dept": "edcp"
+		},
+		{
+			"sections_dept": "edst"
+		},
+		{
+			"sections_dept": "edst"
+		},
+		{
+			"sections_dept": "edst"
+		},
+		{
+			"sections_dept": "edst"
+		},
+		{
+			"sections_dept": "eece"
+		},
+		{
+			"sections_dept": "eece"
+		},
+		{
+			"sections_dept": "eece"
+		},
+		{
+			"sections_dept": "eece"
+		},
+		{
+			"sections_dept": "eece"
+		},
+		{
+			"sections_dept": "eosc"
+		},
+		{
+			"sections_dept": "eosc"
+		},
+		{
+			"sections_dept": "eosc"
+		},
+		{
+			"sections_dept": "eosc"
+		},
+		{
+			"sections_dept": "eosc"
+		},
+		{
+			"sections_dept": "eosc"
+		},
+		{
+			"sections_dept": "eosc"
+		},
+		{
+			"sections_dept": "eosc"
+		},
+		{
+			"sections_dept": "eosc"
+		},
+		{
+			"sections_dept": "eosc"
+		},
+		{
+			"sections_dept": "eosc"
+		},
+		{
+			"sections_dept": "epse"
+		},
+		{
+			"sections_dept": "epse"
+		},
+		{
+			"sections_dept": "epse"
+		},
+		{
+			"sections_dept": "epse"
+		},
+		{
+			"sections_dept": "epse"
+		},
+		{
+			"sections_dept": "etec"
+		},
+		{
+			"sections_dept": "etec"
+		},
+		{
+			"sections_dept": "fish"
+		},
+		{
+			"sections_dept": "fish"
+		},
+		{
+			"sections_dept": "frst"
+		},
+		{
+			"sections_dept": "frst"
+		},
+		{
+			"sections_dept": "frst"
+		},
+		{
+			"sections_dept": "frst"
+		},
+		{
+			"sections_dept": "geog"
+		},
+		{
+			"sections_dept": "germ"
+		},
+		{
+			"sections_dept": "gsat"
+		},
+		{
+			"sections_dept": "gsat"
+		},
+		{
+			"sections_dept": "hist"
+		},
+		{
+			"sections_dept": "larc"
+		},
+		{
+			"sections_dept": "libr"
+		},
+		{
+			"sections_dept": "libr"
+		},
+		{
+			"sections_dept": "libr"
+		},
+		{
+			"sections_dept": "ling"
+		},
+		{
+			"sections_dept": "ling"
+		},
+		{
+			"sections_dept": "ling"
+		},
+		{
+			"sections_dept": "ling"
+		},
+		{
+			"sections_dept": "ling"
+		},
+		{
+			"sections_dept": "ling"
+		},
+		{
+			"sections_dept": "lled"
+		},
+		{
+			"sections_dept": "lled"
+		},
+		{
+			"sections_dept": "math"
+		},
+		{
+			"sections_dept": "math"
+		},
+		{
+			"sections_dept": "math"
+		},
+		{
+			"sections_dept": "math"
+		},
+		{
+			"sections_dept": "math"
+		},
+		{
+			"sections_dept": "math"
+		},
+		{
+			"sections_dept": "math"
+		},
+		{
+			"sections_dept": "math"
+		},
+		{
+			"sections_dept": "math"
+		},
+		{
+			"sections_dept": "math"
+		},
+		{
+			"sections_dept": "math"
+		},
+		{
+			"sections_dept": "math"
+		},
+		{
+			"sections_dept": "mech"
+		},
+		{
+			"sections_dept": "mech"
+		},
+		{
+			"sections_dept": "mech"
+		},
+		{
+			"sections_dept": "mech"
+		},
+		{
+			"sections_dept": "mech"
+		},
+		{
+			"sections_dept": "mech"
+		},
+		{
+			"sections_dept": "mech"
+		},
+		{
+			"sections_dept": "medg"
+		},
+		{
+			"sections_dept": "medg"
+		},
+		{
+			"sections_dept": "medi"
+		},
+		{
+			"sections_dept": "medi"
+		},
+		{
+			"sections_dept": "medi"
+		},
+		{
+			"sections_dept": "medi"
+		},
+		{
+			"sections_dept": "medi"
+		},
+		{
+			"sections_dept": "medi"
+		},
+		{
+			"sections_dept": "micb"
+		},
+		{
+			"sections_dept": "micb"
+		},
+		{
+			"sections_dept": "micb"
+		},
+		{
+			"sections_dept": "micb"
+		},
+		{
+			"sections_dept": "micb"
+		},
+		{
+			"sections_dept": "micb"
+		},
+		{
+			"sections_dept": "mine"
+		},
+		{
+			"sections_dept": "mine"
+		},
+		{
+			"sections_dept": "mine"
+		},
+		{
+			"sections_dept": "mine"
+		},
+		{
+			"sections_dept": "mine"
+		},
+		{
+			"sections_dept": "mine"
+		},
+		{
+			"sections_dept": "musc"
+		},
+		{
+			"sections_dept": "musc"
+		},
+		{
+			"sections_dept": "nrsc"
+		},
+		{
+			"sections_dept": "nrsc"
+		},
+		{
+			"sections_dept": "nurs"
+		},
+		{
+			"sections_dept": "nurs"
+		},
+		{
+			"sections_dept": "path"
+		},
+		{
+			"sections_dept": "path"
+		},
+		{
+			"sections_dept": "path"
+		},
+		{
+			"sections_dept": "path"
+		},
+		{
+			"sections_dept": "path"
+		},
+		{
+			"sections_dept": "path"
+		},
+		{
+			"sections_dept": "pcth"
+		},
+		{
+			"sections_dept": "pcth"
+		},
+		{
+			"sections_dept": "pcth"
+		},
+		{
+			"sections_dept": "pcth"
+		},
+		{
+			"sections_dept": "pcth"
+		},
+		{
+			"sections_dept": "pcth"
+		},
+		{
+			"sections_dept": "pcth"
+		},
+		{
+			"sections_dept": "phar"
+		},
+		{
+			"sections_dept": "phar"
+		},
+		{
+			"sections_dept": "phar"
+		},
+		{
+			"sections_dept": "phar"
+		},
+		{
+			"sections_dept": "phys"
+		},
+		{
+			"sections_dept": "phys"
+		},
+		{
+			"sections_dept": "rhsc"
+		},
+		{
+			"sections_dept": "rhsc"
+		},
+		{
+			"sections_dept": "rmes"
+		},
+		{
+			"sections_dept": "rmes"
+		},
+		{
+			"sections_dept": "rmes"
+		},
+		{
+			"sections_dept": "rmes"
+		},
+		{
+			"sections_dept": "rsot"
+		},
+		{
+			"sections_dept": "rsot"
+		},
+		{
+			"sections_dept": "russ"
+		},
+		{
+			"sections_dept": "soci"
+		},
+		{
+			"sections_dept": "soci"
+		},
+		{
+			"sections_dept": "soci"
+		},
+		{
+			"sections_dept": "soci"
+		},
+		{
+			"sections_dept": "soci"
+		},
+		{
+			"sections_dept": "soci"
+		},
+		{
+			"sections_dept": "sowk"
+		},
+		{
+			"sections_dept": "sowk"
+		},
+		{
+			"sections_dept": "sowk"
+		},
+		{
+			"sections_dept": "sowk"
+		},
+		{
+			"sections_dept": "sowk"
+		},
+		{
+			"sections_dept": "sowk"
+		},
+		{
+			"sections_dept": "sowk"
+		},
+		{
+			"sections_dept": "sowk"
+		},
+		{
+			"sections_dept": "sowk"
+		},
+		{
+			"sections_dept": "spph"
+		},
+		{
+			"sections_dept": "spph"
+		},
+		{
+			"sections_dept": "spph"
+		},
+		{
+			"sections_dept": "spph"
+		},
+		{
+			"sections_dept": "spph"
+		},
+		{
+			"sections_dept": "spph"
+		},
+		{
+			"sections_dept": "spph"
+		},
+		{
+			"sections_dept": "spph"
+		},
+		{
+			"sections_dept": "spph"
+		},
+		{
+			"sections_dept": "spph"
+		},
+		{
+			"sections_dept": "spph"
+		},
+		{
+			"sections_dept": "thtr"
+		},
+		{
+			"sections_dept": "thtr"
+		},
+		{
+			"sections_dept": "thtr"
+		},
+		{
+			"sections_dept": "thtr"
+		},
+		{
+			"sections_dept": "thtr"
+		},
+		{
+			"sections_dept": "thtr"
+		},
+		{
+			"sections_dept": "thtr"
+		},
+		{
+			"sections_dept": "thtr"
+		},
+		{
+			"sections_dept": "thtr"
+		},
+		{
+			"sections_dept": "thtr"
+		},
+		{
+			"sections_dept": "thtr"
+		},
+		{
+			"sections_dept": "thtr"
+		},
+		{
+			"sections_dept": "thtr"
+		},
+		{
+			"sections_dept": "thtr"
+		},
+		{
+			"sections_dept": "thtr"
+		},
+		{
+			"sections_dept": "thtr"
+		},
+		{
+			"sections_dept": "visa"
+		},
+		{
+			"sections_dept": "visa"
+		}
+	]
+}

@@ -1,0 +1,18 @@
+{
+	"title": "more than 1 SCOMP key throws InsightError",
+	"input": {
+		"WHERE": {
+			"IS": {
+				"sections_dept": "cpsc",
+				"sections_instructor": ""
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_dept"
+			]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

@@ -1,0 +1,9 @@
+{
+	"title": "OPTIONS is an array",
+	"input": {
+		"WHERE": {},
+		"OPTIONS": []
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

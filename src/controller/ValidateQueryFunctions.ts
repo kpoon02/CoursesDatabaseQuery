@@ -1,8 +1,12 @@
 import {Query, Where} from "../model/Query";
 import {SectionDataset} from "../model/SectionDataset";
+import {InsightError} from "./IInsightFacade";
 
 export class ValidateQueryFunctions {
 	public static getDatasetId(q: Query): string {
+		if (!Array.isArray(q.OPTIONS.COLUMNS)) {
+			throw new InsightError("Given dataset not found");
+		}
 		return q.OPTIONS.COLUMNS[0].split("_")[0];
 	}
 
@@ -81,10 +85,10 @@ export class ValidateQueryFunctions {
 			return false;
 		} else {
 			// only one key
-			if (!this.sKey(Object.keys(sComp)[0], q.OPTIONS.COLUMNS[0].split("_")[0])) {
+			if (typeof Object.values(sComp)[0] !== "string") {
 				return false;
 			}
-			if (typeof Object.values(sComp)[0] !== "string") {
+			if (!this.sKey(Object.keys(sComp)[0], q.OPTIONS.COLUMNS[0].split("_")[0])) {
 				return false;
 			}
 			if (!regex.test(Object.values(sComp)[0])) {
@@ -112,10 +116,10 @@ export class ValidateQueryFunctions {
 			return false;
 		} else {
 			// only one key
-			if (!this.mKey(Object.keys(mComp)[0], q.OPTIONS.COLUMNS[0].split("_")[0])) {
+			if (typeof Object.values(mComp)[0] !== "number") {
 				return false;
 			}
-			if (typeof Object.values(mComp)[0] !== "number") {
+			if (!this.mKey(Object.keys(mComp)[0], q.OPTIONS.COLUMNS[0].split("_")[0])) {
 				return false;
 			}
 		}
@@ -126,6 +130,9 @@ export class ValidateQueryFunctions {
 	public static validateOPTIONS(q: Query): boolean {
 		// check columns
 		if (q.OPTIONS.COLUMNS === undefined) {
+			return false;
+		}
+		if (!Array.isArray(q.OPTIONS.COLUMNS)) {
 			return false;
 		}
 		if (q.OPTIONS.COLUMNS.length === 0) {
@@ -142,12 +149,6 @@ export class ValidateQueryFunctions {
 					return false;
 				}
 			}
-		}
-		if (!Array.isArray(q.OPTIONS.COLUMNS)) {
-			return false;
-		}
-		if (q.OPTIONS.COLUMNS.length === 0) {
-			return false;
 		}
 		// check order
 		if (q.OPTIONS.ORDER === undefined) {
