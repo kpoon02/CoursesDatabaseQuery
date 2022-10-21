@@ -28,11 +28,26 @@ export class PerformQueryFunctions {
 
 	public static performFilter(q: Query, filter: Where, sections: Section[]): Section[] {
 		if (filter.AND !== undefined) {
-			return this.performFilter(q, filter.AND[1], this.performFilter(q, filter.AND[0], sections));
+			if (filter.AND.length > 1) {
+				let resultSoFar: Section[] = this.performFilter(q, filter.AND[0], sections);
+				for (let i = 1; i < filter.AND.length; i++) {
+					resultSoFar = this.performFilter(q, filter.AND[i], resultSoFar);
+				}
+				return resultSoFar;
+			} else {
+				return this.performFilter(q, filter.AND[0], sections);
+			}
 		} else if (filter.OR !== undefined) {
-			const firstOr = this.performFilter(q, filter.OR[0], sections);
-			const secondOr = this.performFilter(q, filter.OR[1], sections);
-			return Array.from(new Set([...firstOr, ...secondOr]));
+			if (filter.OR.length > 1) {
+				let resultSoFar: Section[] = this.performFilter(q, filter.OR[0], sections);
+				for (let i = 1; i < filter.OR.length; i++) {
+					resultSoFar = Array.from(new Set([...resultSoFar,
+						... this.performFilter(q, filter.OR[i], sections)]));
+				}
+				return resultSoFar;
+			} else {
+				return this.performFilter(q, filter.OR[0], sections);
+			}
 		} else if (filter.LT !== undefined) {
 			const ltFunc = (x: number, y: number) => x < y;
 			return this.performMComparison(filter.LT, ltFunc, sections);
@@ -43,18 +58,7 @@ export class PerformQueryFunctions {
 			const eqFunc = (x: number, y: number) => x === y;
 			return this.performMComparison(filter.EQ, eqFunc, sections);
 		} else if (filter.IS !== undefined) {
-			const isFunc = (name: string, criteria: string) => {
-				let criteriaWithoutWildcards = criteria.replace(/\*/g, "");
-				if (criteria.toString().charAt(0) === "*" && criteria.charAt(criteria.length - 1) === "*") {
-					return name.toString().includes(criteriaWithoutWildcards);
-				} else if (criteria.toString().charAt(0) === "*") {
-					return name.toString().endsWith(criteriaWithoutWildcards);
-				} else if (criteria.toString().charAt(criteria.length - 1) === "*") {
-					return name.toString().startsWith(criteriaWithoutWildcards);
-				} else {
-					return name === criteria;
-				}
-			};
+			const isFunc = this.wildCardHelper();
 			return this.performSComparison(filter.IS, isFunc, sections);
 		} else if (filter.NOT !== undefined) {
 			const deleteArr = this.performFilter(q, filter.NOT, sections);
@@ -64,6 +68,22 @@ export class PerformQueryFunctions {
 			});
 		}
 		return sections;
+	}
+
+	public static wildCardHelper() {
+		const isFunc = (name: string, criteria: string) => {
+			let criteriaWithoutWildcards = criteria.replace(/\*/g, "");
+			if (criteria.toString().charAt(0) === "*" && criteria.charAt(criteria.length - 1) === "*") {
+				return name.toString().includes(criteriaWithoutWildcards);
+			} else if (criteria.toString().charAt(0) === "*") {
+				return name.toString().endsWith(criteriaWithoutWildcards);
+			} else if (criteria.toString().charAt(criteria.length - 1) === "*") {
+				return name.toString().startsWith(criteriaWithoutWildcards);
+			} else {
+				return name === criteria;
+			}
+		};
+		return isFunc;
 	}
 
 	public static performMComparison(

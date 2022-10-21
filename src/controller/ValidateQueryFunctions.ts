@@ -47,9 +47,19 @@ export class ValidateQueryFunctions {
 	public static validateFilter(q: Query, filter: Where): boolean {
 		// check if COLUMNS is empty, if empty, cannot retrieve a datasetID
 		if (filter.AND !== undefined && filter.AND.length !== 0) {
-			return this.validateFilter(q, filter.AND[0]) && this.validateFilter(q, filter.AND[1]);
+			for (let andFilter of filter.AND) {
+				if (!this.validateFilter(q, andFilter)) {
+					return false;
+				}
+			}
+			return true;
 		} else if (filter.OR !== undefined && filter.OR.length !== 0) {
-			return this.validateFilter(q, filter.OR[0]) && this.validateFilter(q, filter.OR[1]);
+			for (let orFilter of filter.OR) {
+				if (!this.validateFilter(q, orFilter)) {
+					return false;
+				}
+			}
+			return true;
 		} else if (filter.LT !== undefined && filter.LT.length !== 0) {
 			return this.validateMComparison(q, filter.LT);
 		} else if (filter.GT !== undefined && filter.GT.length !== 0) {
