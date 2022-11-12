@@ -1,4 +1,4 @@
-import {JsonSection} from "../controller/InsightFacade";
+import {JsonSection} from "../../controller/dataset/SectionDatasetController";
 
 export class Section {
 	private readonly _dept: string; // JsonSection SUBJECT
@@ -69,26 +69,26 @@ export class Section {
 		return this._year;
 	}
 
-	public getProp(prop: string): string | number {
-		if (prop === "dept") {
+	public getProperty(property: string): string | number {
+		if (property === "dept") {
 			return this._dept;
-		} else if (prop === "id") {
+		} else if (property === "id") {
 			return this._id;
-		} else if (prop === "avg") {
+		} else if (property === "avg") {
 			return this._avg;
-		} else if (prop === "instructor") {
+		} else if (property === "instructor") {
 			return this._instructor;
-		} else if (prop === "title") {
+		} else if (property === "title") {
 			return this._title;
-		} else if (prop === "pass") {
+		} else if (property === "pass") {
 			return this._pass;
-		} else if (prop === "fail") {
+		} else if (property === "fail") {
 			return this._fail;
-		} else if (prop === "audit") {
+		} else if (property === "audit") {
 			return this._audit;
-		} else if (prop === "uuid") {
+		} else if (property === "uuid") {
 			return this._uuid;
-		} else if (prop === "year") {
+		} else if (property === "year") {
 			return this._year;
 		} else {
 			throw new Error();

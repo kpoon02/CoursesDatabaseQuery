@@ -1,6 +1,6 @@
 import {Query, Where} from "../model/Query";
-import {Section} from "../model/Section";
-import {SectionDataset} from "../model/SectionDataset";
+import {Section} from "../model/dataset/Section";
+import {SectionDataset} from "../model/dataset/SectionDataset";
 import {ValidateQueryFunctions} from "./ValidateQueryFunctions";
 import {InsightError, InsightResult, ResultTooLargeError} from "./IInsightFacade";
 
@@ -41,8 +41,9 @@ export class PerformQueryFunctions {
 			if (filter.OR.length > 1) {
 				let resultSoFar: Section[] = this.performFilter(q, filter.OR[0], sections);
 				for (let i = 1; i < filter.OR.length; i++) {
-					resultSoFar = Array.from(new Set([...resultSoFar,
-						... this.performFilter(q, filter.OR[i], sections)]));
+					resultSoFar = Array.from(
+						new Set([...resultSoFar, ...this.performFilter(q, filter.OR[i], sections)])
+					);
 				}
 				return resultSoFar;
 			} else {
@@ -71,7 +72,7 @@ export class PerformQueryFunctions {
 	}
 
 	public static wildCardHelper() {
-		const isFunc = (name: string, criteria: string) => {
+		return (name: string, criteria: string) => {
 			let criteriaWithoutWildcards = criteria.replace(/\*/g, "");
 			if (criteria.toString().charAt(0) === "*" && criteria.charAt(criteria.length - 1) === "*") {
 				return name.toString().includes(criteriaWithoutWildcards);
@@ -83,7 +84,6 @@ export class PerformQueryFunctions {
 				return name === criteria;
 			}
 		};
-		return isFunc;
 	}
 
 	public static performMComparison(
@@ -141,7 +141,7 @@ export class PerformQueryFunctions {
 				let itemField = item.split("_")[1];
 				type SectionKey = keyof InsightResult;
 				const key = item as SectionKey;
-				sectionCols[i][key] = filteredSections[i].getProp(itemField);
+				sectionCols[i][key] = filteredSections[i].getProperty(itemField);
 			}
 		}
 		return sectionCols;

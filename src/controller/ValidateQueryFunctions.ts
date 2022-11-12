@@ -1,5 +1,5 @@
 import {Query, Where} from "../model/Query";
-import {SectionDataset} from "../model/SectionDataset";
+import {SectionDataset} from "../model/dataset/SectionDataset";
 import {InsightError} from "./IInsightFacade";
 
 export class ValidateQueryFunctions {
@@ -33,6 +33,7 @@ export class ValidateQueryFunctions {
 		}
 		return false;
 	}
+
 	public static validateWHERE(q: Query): boolean {
 		if (Object.keys(q.WHERE).length === 0) {
 			return true;
