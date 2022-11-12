@@ -114,25 +114,25 @@ export class Room {
 	}
 
 	public getProperty(property: string): string | number {
-		if (property === "dept") {
+		if (property === "fullname") {
 			return this._fullname;
-		} else if (property === "id") {
+		} else if (property === "shortname") {
 			return this._shortname;
-		} else if (property === "avg") {
+		} else if (property === "number") {
 			return this._number;
-		} else if (property === "instructor") {
+		} else if (property === "name") {
 			return this._name;
-		} else if (property === "title") {
+		} else if (property === "address") {
 			return this._address;
-		} else if (property === "pass") {
+		} else if (property === "lat") {
 			return this._lat;
-		} else if (property === "fail") {
+		} else if (property === "lon") {
 			return this._lon;
-		} else if (property === "audit") {
+		} else if (property === "seats") {
 			return this._seats;
-		} else if (property === "uuid") {
+		} else if (property === "type") {
 			return this._type;
-		} else if (property === "year") {
+		} else if (property === "furniture") {
 			return this._furniture;
 		} else if (property === "href") {
 			return this._href;

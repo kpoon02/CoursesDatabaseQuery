@@ -156,6 +156,16 @@ describe("InsightFacade", function () {
 			expect(result).to.deep.equal(expected);
 		});
 
+		it("Should add different types of valid datasets", async function () {
+			const content: string = datasetContents.get("sections") ?? "";
+			const content2: string = datasetContents.get("rooms") ?? "";
+			const expected: string[] = [id, id3];
+			await insightFacade.addDataset(id, content, InsightDatasetKind.Sections);
+			const result = await insightFacade.addDataset(id3, content2, InsightDatasetKind.Rooms);
+
+			expect(result).to.deep.equal(expected);
+		});
+
 		it("Should reject section datasets with underscores in id", async function () {
 			const invalidId: string = "sections_invalid";
 			const content: string = datasetContents.get("sections") ?? "";
@@ -250,6 +260,17 @@ describe("InsightFacade", function () {
 			expect(expected1).to.deep.equal(expected2);
 		});
 
+		it("Should load section and room datasets on disk", async function () {
+			const content: string = datasetContents.get("sections") ?? "";
+			const content2: string = datasetContents.get("rooms") ?? "";
+			await insightFacade.addDataset(id, content, InsightDatasetKind.Sections);
+			await insightFacade.addDataset(id3, content2, InsightDatasetKind.Rooms);
+			const insightFacade2 = new InsightFacade();
+			const expected1 = await insightFacade.listDatasets();
+			const expected2 = await insightFacade2.listDatasets();
+			expect(expected1).to.deep.equal(expected2);
+		});
+
 		it("should list no section datasets", function () {
 			return insightFacade.listDatasets().then((insightDatasets) => {
 				expect(insightDatasets).to.be.an.instanceof(Array);
@@ -301,6 +322,33 @@ describe("InsightFacade", function () {
 		it("Should list multiple room datasets", async function () {
 			const {expected1, expected2} = await addMultipleRoomDatasets();
 			await assertMultipleDatasets(expected1, expected2);
+		});
+
+		it("Should list multiple types of datasets", async function () {
+			const content: string = datasetContents.get("sections") ?? "";
+			const content2: string = datasetContents.get("rooms") ?? "";
+			return insightFacade
+				.addDataset("sections", content, InsightDatasetKind.Sections)
+				.then(() => {
+					return insightFacade.addDataset("rooms", content2, InsightDatasetKind.Rooms);
+				})
+				.then(() => {
+					return insightFacade.listDatasets();
+				})
+				.then((insightDatasets) => {
+					expect(insightDatasets).to.deep.equals([
+						{
+							id: "sections",
+							kind: InsightDatasetKind.Sections,
+							numRows: 64612,
+						},
+						{
+							id: "rooms",
+							kind: InsightDatasetKind.Rooms,
+							numRows: 364,
+						},
+					]);
+				});
 		});
 
 		it("should remove only one section dataset successfully", function () {

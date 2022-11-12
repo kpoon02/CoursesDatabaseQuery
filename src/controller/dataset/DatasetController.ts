@@ -26,16 +26,16 @@ export class DatasetController {
 
 		if (kind === InsightDatasetKind.Sections) {
 			await this.sectionDatasetController.addDataset(id, content);
-			for (let dataset of this.sectionDatasetController.getDatasets()) {
-				ids.push(dataset.getId());
-			}
 		} else if (kind === InsightDatasetKind.Rooms) {
 			await this.roomDatasetController.addDataset(id, content);
-			for (let dataset of this.roomDatasetController.getDatasets()) {
-				ids.push(dataset.getId());
-			}
 		} else {
 			throw new InsightError("Invalid InsightDatasetKind type");
+		}
+		for (let dataset of this.sectionDatasetController.getDatasets()) {
+			ids.push(dataset.getId());
+		}
+		for (let dataset of this.roomDatasetController.getDatasets()) {
+			ids.push(dataset.getId());
 		}
 		return ids;
 	}
@@ -77,8 +77,10 @@ export class DatasetController {
 	// EFFECTS: checks if the data directory exists, if not create it. Then add the dataset to data.
 	public static saveToDisk(dataset: SectionDataset | RoomDataset, id: string, dir: string) {
 		const data = JSON.stringify(dataset);
-		if (!fs.existsSync(dir)) {
+		if (!fs.existsSync("./data")) {
 			fs.mkdirSync("./data");
+		}
+		if (!fs.existsSync(dir)) {
 			fs.mkdirSync(dir);
 		}
 		fs.writeFileSync(dir + "/" + id + ".json", data);
