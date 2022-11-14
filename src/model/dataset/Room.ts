@@ -1,3 +1,12 @@
+import http from "http";
+import {InsightError} from "../../controller/IInsightFacade";
+
+export interface GeoResponse {
+	lat?: number;
+	lon?: number;
+	error?: string;
+}
+
 export class Room {
 	private _fullname: string;
 	private _shortname: string;
@@ -139,5 +148,36 @@ export class Room {
 		} else {
 			throw new Error();
 		}
+	}
+
+	public async setGeolocation(geolocation: GeoResponse) {
+		if (geolocation.error != null) {
+			throw new InsightError(geolocation.error);
+		}
+		if (geolocation.lon == null || geolocation.lat == null) {
+			throw new InsightError(geolocation.error);
+			// this block should never execute
+		}
+		this.setLat(geolocation.lat);
+		this.setLon(geolocation.lon);
+	}
+
+	public requestGeolocation(): Promise<GeoResponse> {
+		return new Promise<GeoResponse>((resolve, reject) => {
+			const address = this.address.replace(/ /g, "%20");
+			http.get(`http://cs310.students.cs.ubc.ca:11316/api/v1/project_team107/${address}`, (response) => {
+				let data = "";
+
+				response.on("data", (chunk) => {
+					data += chunk;
+				});
+
+				response.on("end", () => {
+					resolve(JSON.parse(data) as GeoResponse);
+				});
+			}).on("error", () => {
+				reject("Failed to retrieve geolocation");
+			});
+		});
 	}
 }

@@ -1,7 +1,7 @@
 import {RoomDataset} from "../../model/dataset/RoomDataset";
 import {InsightDataset, InsightError} from "../IInsightFacade";
 import JSZip from "jszip";
-import {Room} from "../../model/dataset/Room";
+import {GeoResponse, Room} from "../../model/dataset/Room";
 import {parse} from "parse5";
 import {BuildingParser} from "./BuildingParser";
 import {IndexParser} from "./IndexParser";
@@ -55,7 +55,6 @@ export class RoomDatasetController {
 		let rooms: Room[] = [];
 		let promises: Array<Promise<string>> = [];
 		let indexList: Map<string, string>;
-
 		let jszip: JSZip | null = await JSZip.loadAsync(content, {base64: true});
 		// throw InsightError if the zip file does not have an 'index.htm' file or
 		// 'campus/discover/buildings-and-classrooms' directory, otherwise load each file
@@ -100,9 +99,29 @@ export class RoomDatasetController {
 				throw new InsightError(err);
 			});
 
+		await this.setGeolocations(rooms);
 		const roomDataset = new RoomDataset(id, rooms.length, rooms);
 		this.datasets.push(roomDataset);
 		DatasetController.saveToDisk(roomDataset, id, DIR);
+	}
+
+	private async setGeolocations(rooms: Room[]) {
+		let geo: Array<Promise<GeoResponse>> = [];
+		for (let room of rooms) {
+			geo.push(room.requestGeolocation());
+		}
+
+		let counter = 0;
+		await Promise.all(geo)
+			.then((results) => {
+				for (let geolocation of results) {
+					rooms[counter].setGeolocation(geolocation);
+					counter++;
+				}
+			})
+			.catch((err) => {
+				throw new InsightError(err);
+			});
 	}
 
 	// parses the json object and returns a RoomDataset
