@@ -1,0 +1,75 @@
+{
+	"title": "validRoomQueryWithOldEBNF",
+	"input": {
+		"WHERE": {
+			"OR": [
+				{
+					"AND": [
+						{
+							"GT": {
+								"rooms_seats": 90
+							}
+						},
+						{
+							"IS": {
+								"rooms_shortname": "DMP"
+							}
+						}
+					]
+				},
+				{
+					"EQ": {
+						"rooms_seats": 50
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"rooms_seats",
+				"rooms_shortname",
+				"rooms_seats"
+			],
+			"ORDER": "rooms_seats"
+		}
+	},
+	"errorExpected": false,
+	"expected": [
+		{
+			"rooms_seats": 50,
+			"rooms_shortname": "ALRD"
+		},
+		{
+			"rooms_seats": 50,
+			"rooms_shortname": "BUCH"
+		},
+		{
+			"rooms_seats": 50,
+			"rooms_shortname": "BUCH"
+		},
+		{
+			"rooms_seats": 50,
+			"rooms_shortname": "BUCH"
+		},
+		{
+			"rooms_seats": 50,
+			"rooms_shortname": "EOSM"
+		},
+		{
+			"rooms_seats": 50,
+			"rooms_shortname": "IONA"
+		},
+		{
+			"rooms_seats": 50,
+			"rooms_shortname": "IBLC"
+		},
+		{
+			"rooms_seats": 120,
+			"rooms_shortname": "DMP"
+		},
+		{
+			"rooms_seats": 160,
+			"rooms_shortname": "DMP"
+		}
+	]
+}

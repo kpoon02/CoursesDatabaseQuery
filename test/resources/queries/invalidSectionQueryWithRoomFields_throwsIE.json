@@ -1,0 +1,19 @@
+{
+	"title": "invalidSectionQueryWithRoomFields_throwsIE",
+	"input": {
+		"WHERE": {
+			"GT": {
+				"sections_seats": 97
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_lon",
+				"sections_seats"
+			],
+			"ORDER": "sections_seats"
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

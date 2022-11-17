@@ -1,0 +1,1483 @@
+{
+	"title": "validRoomQueryWithApplyAvgGeoLat",
+	"input": {
+		"WHERE": {},
+		"OPTIONS": {
+			"COLUMNS": [
+				"rooms_name",
+				"geoLatAvg"
+			]
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"rooms_name"
+			],
+			"APPLY": [
+				{
+					"geoLatAvg": {
+						"AVG": "rooms_lat"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": false,
+	"expected": [
+		{
+			"rooms_name": "ALRD_105",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "ALRD_112",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "ALRD_113",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "ALRD_121",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "ALRD_B101",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "ANSO_202",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "ANSO_203",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "ANSO_205",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "ANSO_207",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "AERL_120",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "AUDX_142",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "AUDX_157",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BIOL_1503",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "BIOL_2000",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "BIOL_2200",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "BIOL_2519",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "BRKX_2365",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BRKX_2367",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_A101",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_A102",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_A103",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_A104",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_A201",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_A202",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_A203",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_B141",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_B142",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_B208",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_B209",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_B210",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_B211",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_B213",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_B215",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_B216",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_B218",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_B219",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_B302",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_B303",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_B304",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_B306",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_B307",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_B308",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_B309",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_B310",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_B312",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_B313",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_B315",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_B316",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_B318",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_B319",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D201",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D204",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D205",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D207",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D209",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D213",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D214",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D216",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D217",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D218",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D219",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D221",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D222",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D228",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D229",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D301",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D304",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D306",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D307",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D312",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D313",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D314",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D315",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D316",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D317",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D319",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D322",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D323",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "BUCH_D325",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "CIRS_1250",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "CHBE_101",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "CHBE_102",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "CHBE_103",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "CHEM_B150",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "CHEM_B250",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "CHEM_C124",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "CHEM_C126",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "CHEM_D200",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "CHEM_D300",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "CEME_1202",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "CEME_1204",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "CEME_1206",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "CEME_1210",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "CEME_1212",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "CEME_1215",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "EOSM_135",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ESB_1012",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ESB_1013",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ESB_2012",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "FNH_20",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "FNH_30",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "FNH_320",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "FNH_40",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "FNH_50",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "FNH_60",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "FSC_1001",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "FSC_1002",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "FSC_1003",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "FSC_1005",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "FSC_1221",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "FSC_1402",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "FSC_1611",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "FSC_1613",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "FSC_1615",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "FSC_1617",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "FORW_303",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "FORW_317",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "FORW_519",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "LASR_102",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "LASR_104",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "LASR_105",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "LASR_107",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "LASR_211",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "LASR_5C",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "FRDM_153",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "GEOG_100",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "GEOG_101",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "GEOG_147",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "GEOG_200",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "GEOG_201",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "GEOG_212",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "GEOG_214",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "GEOG_242",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "HEBB_10",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "HEBB_100",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "HEBB_12",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "HEBB_13",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "HENN_200",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "HENN_201",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "HENN_202",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "HENN_301",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "HENN_302",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "HENN_304",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "ANGU_037",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_039",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_098",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_232",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_234",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_235",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_237",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_241",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_243",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_254",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_291",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_292",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_293",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_295",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_296",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_332",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_334",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_335",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_339",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_343",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_345",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_347",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_350",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_354",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_432",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_434",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_435",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ANGU_437",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "DMP_101",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "DMP_110",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "DMP_201",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "DMP_301",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "DMP_310",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "IONA_301",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "IONA_633",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "IBLC_155",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "IBLC_156",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "IBLC_157",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "IBLC_158",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "IBLC_182",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "IBLC_185",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "IBLC_191",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "IBLC_192",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "IBLC_193",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "IBLC_194",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "IBLC_195",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "IBLC_261",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "IBLC_263",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "IBLC_264",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "IBLC_265",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "IBLC_266",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "IBLC_460",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "IBLC_461",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "SOWK_122",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SOWK_124",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SOWK_222",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SOWK_223",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SOWK_224",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SOWK_324",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SOWK_326",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "LSK_200",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "LSK_201",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "LSK_460",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "LSK_462",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "LSC_1001",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "LSC_1002",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "LSC_1003",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MCLD_202",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MCLD_214",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MCLD_220",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MCLD_228",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MCLD_242",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MCLD_254",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MCML_154",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MCML_158",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MCML_160",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MCML_166",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MCML_256",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MCML_260",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MCML_358",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MCML_360A",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MCML_360B",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MCML_360C",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MCML_360D",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MCML_360E",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MCML_360F",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MCML_360G",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MCML_360H",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MCML_360J",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MCML_360K",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MCML_360L",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MCML_360M",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "MATH_100",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "MATH_102",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "MATH_104",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "MATH_105",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "MATH_202",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "MATH_203",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "MATH_204",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "MATH_225",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "MATX_1100",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "SCRF_100",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SCRF_1003",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SCRF_1004",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SCRF_1005",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SCRF_1020",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SCRF_1021",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SCRF_1022",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SCRF_1023",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SCRF_1024",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SCRF_1328",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SCRF_200",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SCRF_201",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SCRF_202",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SCRF_203",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SCRF_204",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SCRF_204A",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SCRF_205",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SCRF_206",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SCRF_207",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SCRF_208",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SCRF_209",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SCRF_210",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ORCH_1001",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ORCH_3002",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ORCH_3004",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ORCH_3016",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ORCH_3018",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ORCH_3052",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ORCH_3058",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ORCH_3062",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ORCH_3068",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ORCH_3072",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ORCH_3074",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ORCH_4002",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ORCH_4004",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ORCH_4016",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ORCH_4018",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ORCH_4052",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ORCH_4058",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ORCH_4062",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ORCH_4068",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ORCH_4072",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "ORCH_4074",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "PHRM_1101",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "PHRM_1201",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "PHRM_3112",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "PHRM_3114",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "PHRM_3115",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "PHRM_3116",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "PHRM_3118",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "PHRM_3120",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "PHRM_3122",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "PHRM_3124",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "PHRM_3208",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "PCOH_1001",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "PCOH_1002",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "PCOH_1003",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "PCOH_1008",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "PCOH_1009",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "PCOH_1011",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "PCOH_1215",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "PCOH_1302",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "OSBO_203A",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "OSBO_203B",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "OSBO_A",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SPPH_143",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SPPH_B108",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SPPH_B112",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SPPH_B136",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SPPH_B138",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SPPH_B151",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SRC_220A",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "SRC_220B",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "SRC_220C",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "UCLL_101",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "UCLL_103",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "UCLL_107",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "UCLL_109",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "MGYM_206",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "MGYM_208",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "WESB_100",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "WESB_201",
+			"geoLatAvg": 49.27
+		},
+		{
+			"rooms_name": "SWNG_105",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SWNG_106",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SWNG_107",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SWNG_108",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SWNG_109",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SWNG_110",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SWNG_121",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SWNG_122",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SWNG_221",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SWNG_222",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SWNG_305",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SWNG_306",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SWNG_307",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SWNG_308",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SWNG_309",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SWNG_310",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SWNG_405",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SWNG_406",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SWNG_407",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SWNG_408",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SWNG_409",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "SWNG_410",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "WOOD_1",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "WOOD_2",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "WOOD_3",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "WOOD_4",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "WOOD_5",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "WOOD_6",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "WOOD_B75",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "WOOD_B79",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "WOOD_G41",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "WOOD_G44",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "WOOD_G53",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "WOOD_G55",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "WOOD_G57",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "WOOD_G59",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "WOOD_G65",
+			"geoLatAvg": 49.26
+		},
+		{
+			"rooms_name": "WOOD_G66",
+			"geoLatAvg": 49.26
+		}
+	]
+}

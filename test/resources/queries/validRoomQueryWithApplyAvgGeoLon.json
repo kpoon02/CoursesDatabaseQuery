@@ -1,0 +1,1483 @@
+{
+	"title": "validRoomQueryWithApplyAvgGeoLon",
+	"input": {
+		"WHERE": {},
+		"OPTIONS": {
+			"COLUMNS": [
+				"rooms_name",
+				"geoLonAvg"
+			]
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"rooms_name"
+			],
+			"APPLY": [
+				{
+					"geoLonAvg": {
+						"AVG": "rooms_lon"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": false,
+	"expected": [
+		{
+			"rooms_name": "ALRD_105",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ALRD_112",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ALRD_113",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ALRD_121",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ALRD_B101",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANSO_202",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "ANSO_203",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "ANSO_205",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "ANSO_207",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "AERL_120",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "AUDX_142",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "AUDX_157",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "BIOL_1503",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BIOL_2000",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BIOL_2200",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BIOL_2519",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BRKX_2365",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BRKX_2367",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_A101",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_A102",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_A103",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_A104",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_A201",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_A202",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_A203",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_B141",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_B142",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_B208",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_B209",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_B210",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_B211",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_B213",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_B215",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_B216",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_B218",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_B219",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_B302",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_B303",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_B304",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_B306",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_B307",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_B308",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_B309",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_B310",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_B312",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_B313",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_B315",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_B316",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_B318",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_B319",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D201",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D204",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D205",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D207",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D209",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D213",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D214",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D216",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D217",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D218",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D219",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D221",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D222",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D228",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D229",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D301",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D304",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D306",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D307",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D312",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D313",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D314",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D315",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D316",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D317",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D319",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D322",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D323",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "BUCH_D325",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "CIRS_1250",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "CHBE_101",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "CHBE_102",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "CHBE_103",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "CHEM_B150",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "CHEM_B250",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "CHEM_C124",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "CHEM_C126",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "CHEM_D200",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "CHEM_D300",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "CEME_1202",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "CEME_1204",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "CEME_1206",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "CEME_1210",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "CEME_1212",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "CEME_1215",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "EOSM_135",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ESB_1012",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ESB_1013",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ESB_2012",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "FNH_20",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "FNH_30",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "FNH_320",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "FNH_40",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "FNH_50",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "FNH_60",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "FSC_1001",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "FSC_1002",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "FSC_1003",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "FSC_1005",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "FSC_1221",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "FSC_1402",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "FSC_1611",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "FSC_1613",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "FSC_1615",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "FSC_1617",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "FORW_303",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "FORW_317",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "FORW_519",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "LASR_102",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "LASR_104",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "LASR_105",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "LASR_107",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "LASR_211",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "LASR_5C",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "FRDM_153",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "GEOG_100",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "GEOG_101",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "GEOG_147",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "GEOG_200",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "GEOG_201",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "GEOG_212",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "GEOG_214",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "GEOG_242",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "HEBB_10",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "HEBB_100",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "HEBB_12",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "HEBB_13",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "HENN_200",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "HENN_201",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "HENN_202",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "HENN_301",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "HENN_302",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "HENN_304",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_037",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_039",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_098",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_232",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_234",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_235",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_237",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_241",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_243",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_254",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_291",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_292",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_293",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_295",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_296",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_332",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_334",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_335",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_339",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_343",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_345",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_347",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_350",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_354",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_432",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_434",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_435",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ANGU_437",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "DMP_101",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "DMP_110",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "DMP_201",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "DMP_301",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "DMP_310",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "IONA_301",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "IONA_633",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "IBLC_155",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "IBLC_156",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "IBLC_157",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "IBLC_158",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "IBLC_182",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "IBLC_185",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "IBLC_191",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "IBLC_192",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "IBLC_193",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "IBLC_194",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "IBLC_195",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "IBLC_261",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "IBLC_263",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "IBLC_264",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "IBLC_265",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "IBLC_266",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "IBLC_460",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "IBLC_461",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SOWK_122",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "SOWK_124",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "SOWK_222",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "SOWK_223",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "SOWK_224",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "SOWK_324",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "SOWK_326",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "LSK_200",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "LSK_201",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "LSK_460",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "LSK_462",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "LSC_1001",
+			"geoLonAvg": -123.24
+		},
+		{
+			"rooms_name": "LSC_1002",
+			"geoLonAvg": -123.24
+		},
+		{
+			"rooms_name": "LSC_1003",
+			"geoLonAvg": -123.24
+		},
+		{
+			"rooms_name": "MCLD_202",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MCLD_214",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MCLD_220",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MCLD_228",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MCLD_242",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MCLD_254",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MCML_154",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MCML_158",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MCML_160",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MCML_166",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MCML_256",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MCML_260",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MCML_358",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MCML_360A",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MCML_360B",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MCML_360C",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MCML_360D",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MCML_360E",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MCML_360F",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MCML_360G",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MCML_360H",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MCML_360J",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MCML_360K",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MCML_360L",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MCML_360M",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MATH_100",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "MATH_102",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "MATH_104",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "MATH_105",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "MATH_202",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "MATH_203",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "MATH_204",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "MATH_225",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "MATX_1100",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SCRF_100",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SCRF_1003",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SCRF_1004",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SCRF_1005",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SCRF_1020",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SCRF_1021",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SCRF_1022",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SCRF_1023",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SCRF_1024",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SCRF_1328",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SCRF_200",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SCRF_201",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SCRF_202",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SCRF_203",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SCRF_204",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SCRF_204A",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SCRF_205",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SCRF_206",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SCRF_207",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SCRF_208",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SCRF_209",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SCRF_210",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ORCH_1001",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ORCH_3002",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ORCH_3004",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ORCH_3016",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ORCH_3018",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ORCH_3052",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ORCH_3058",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ORCH_3062",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ORCH_3068",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ORCH_3072",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ORCH_3074",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ORCH_4002",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ORCH_4004",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ORCH_4016",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ORCH_4018",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ORCH_4052",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ORCH_4058",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ORCH_4062",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ORCH_4068",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ORCH_4072",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "ORCH_4074",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "PHRM_1101",
+			"geoLonAvg": -123.24
+		},
+		{
+			"rooms_name": "PHRM_1201",
+			"geoLonAvg": -123.24
+		},
+		{
+			"rooms_name": "PHRM_3112",
+			"geoLonAvg": -123.24
+		},
+		{
+			"rooms_name": "PHRM_3114",
+			"geoLonAvg": -123.24
+		},
+		{
+			"rooms_name": "PHRM_3115",
+			"geoLonAvg": -123.24
+		},
+		{
+			"rooms_name": "PHRM_3116",
+			"geoLonAvg": -123.24
+		},
+		{
+			"rooms_name": "PHRM_3118",
+			"geoLonAvg": -123.24
+		},
+		{
+			"rooms_name": "PHRM_3120",
+			"geoLonAvg": -123.24
+		},
+		{
+			"rooms_name": "PHRM_3122",
+			"geoLonAvg": -123.24
+		},
+		{
+			"rooms_name": "PHRM_3124",
+			"geoLonAvg": -123.24
+		},
+		{
+			"rooms_name": "PHRM_3208",
+			"geoLonAvg": -123.24
+		},
+		{
+			"rooms_name": "PCOH_1001",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "PCOH_1002",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "PCOH_1003",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "PCOH_1008",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "PCOH_1009",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "PCOH_1011",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "PCOH_1215",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "PCOH_1302",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "OSBO_203A",
+			"geoLonAvg": -123.24
+		},
+		{
+			"rooms_name": "OSBO_203B",
+			"geoLonAvg": -123.24
+		},
+		{
+			"rooms_name": "OSBO_A",
+			"geoLonAvg": -123.24
+		},
+		{
+			"rooms_name": "SPPH_143",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SPPH_B108",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SPPH_B112",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SPPH_B136",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SPPH_B138",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SPPH_B151",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SRC_220A",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SRC_220B",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SRC_220C",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "UCLL_101",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "UCLL_103",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "UCLL_107",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "UCLL_109",
+			"geoLonAvg": -123.26
+		},
+		{
+			"rooms_name": "MGYM_206",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "MGYM_208",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "WESB_100",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "WESB_201",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SWNG_105",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SWNG_106",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SWNG_107",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SWNG_108",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SWNG_109",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SWNG_110",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SWNG_121",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SWNG_122",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SWNG_221",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SWNG_222",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SWNG_305",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SWNG_306",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SWNG_307",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SWNG_308",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SWNG_309",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SWNG_310",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SWNG_405",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SWNG_406",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SWNG_407",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SWNG_408",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SWNG_409",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "SWNG_410",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "WOOD_1",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "WOOD_2",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "WOOD_3",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "WOOD_4",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "WOOD_5",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "WOOD_6",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "WOOD_B75",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "WOOD_B79",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "WOOD_G41",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "WOOD_G44",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "WOOD_G53",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "WOOD_G55",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "WOOD_G57",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "WOOD_G59",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "WOOD_G65",
+			"geoLonAvg": -123.25
+		},
+		{
+			"rooms_name": "WOOD_G66",
+			"geoLonAvg": -123.25
+		}
+	]
+}

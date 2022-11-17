@@ -146,7 +146,7 @@ export class Room {
 		} else if (property === "href") {
 			return this._href;
 		} else {
-			throw new Error();
+			throw new InsightError("Cannot retrieve field for this Room");
 		}
 	}
 

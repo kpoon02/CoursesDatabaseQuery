@@ -10,7 +10,6 @@ import InsightFacade from "../../src/controller/InsightFacade";
 import * as fs from "fs-extra";
 import {folderTest} from "@ubccpsc310/folder-test";
 import {expect} from "chai";
-import {it} from "mocha";
 
 describe("InsightFacade", function () {
 	let insightFacade: InsightFacade;
@@ -458,6 +457,7 @@ describe("InsightFacade", function () {
 					datasetContents.get("sections") ?? "",
 					InsightDatasetKind.Sections
 				),
+				insightFacade.addDataset("rooms", datasetContents.get("rooms") ?? "", InsightDatasetKind.Rooms),
 			];
 
 			return Promise.all(loadDatasetPromises);

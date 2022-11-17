@@ -1,4 +1,5 @@
 import {JsonSection} from "../../controller/dataset/SectionDatasetController";
+import {InsightError} from "../../controller/IInsightFacade";
 
 export class Section {
 	private readonly _dept: string; // JsonSection SUBJECT
@@ -91,7 +92,7 @@ export class Section {
 		} else if (property === "year") {
 			return this._year;
 		} else {
-			throw new Error();
+			throw new InsightError("Cannot retrieve field for this Section");
 		}
 	}
 }

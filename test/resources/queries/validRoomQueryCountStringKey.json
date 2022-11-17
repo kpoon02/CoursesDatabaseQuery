@@ -1,0 +1,59 @@
+{
+	"title": "validRoomQueryCountStringKey",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"rooms_furniture": "*Tables*"
+					}
+				},
+				{
+					"GT": {
+						"rooms_seats": 300
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"rooms_shortname",
+				"countName"
+			],
+			"ORDER": {
+				"dir": "DOWN",
+				"keys": [
+					"countName",
+					"rooms_shortname"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"rooms_shortname"
+			],
+			"APPLY": [
+				{
+					"countName": {
+						"COUNT": "rooms_name"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": false,
+	"expected": [
+		{
+			"rooms_shortname": "LSC",
+			"countName": 2
+		},
+		{
+			"rooms_shortname": "OSBO",
+			"countName": 1
+		},
+		{
+			"rooms_shortname": "HEBB",
+			"countName": 1
+		}
+	]
+}

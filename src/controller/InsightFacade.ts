@@ -1,8 +1,10 @@
 import {IInsightFacade, InsightDataset, InsightDatasetKind, InsightError, InsightResult} from "./IInsightFacade";
 import {ValidateQueryFunctions} from "./ValidateQueryFunctions";
 import {Query} from "../model/Query";
-import {PerformQueryFunctions} from "./PerformQueryFunctions";
+import {PerformQueryWhereFunctions} from "./PerformQueryWhereFunctions";
+import {PerformQueryTransformationsFunctions} from "./PerformQueryTransformationsFunctions";
 import {DatasetController} from "./dataset/DatasetController";
+import {PerformQueryOptionsFunctions} from "./PerformQueryOptionsFunctions";
 
 /**
  * This is the main programmatic entry point for the project.
@@ -26,7 +28,6 @@ export default class InsightFacade implements IInsightFacade {
 	}
 
 	public performQuery(query: unknown): Promise<InsightResult[]> {
-		// using type predicates to ensure input query is of type Query
 		function isQuery(q: unknown): q is Query {
 			return (
 				q !== null &&
@@ -37,24 +38,33 @@ export default class InsightFacade implements IInsightFacade {
 				(q as Query).OPTIONS.COLUMNS !== undefined
 			);
 		}
-
 		if (isQuery(query)) {
-			if (ValidateQueryFunctions.validateQuery(query, this.datasetController.getSectionDatasets())) {
-				return Promise.resolve(
-					PerformQueryFunctions.performOPTIONS(
-						query,
-						PerformQueryFunctions.performWHERE(
-							query,
-							PerformQueryFunctions.getQueriedSectionDataset(
-								query,
-								this.datasetController.getSectionDatasets()
-							)
-						)
-					)
-				);
+			let queryType: string = "";
+			let datasets = [];
+			if (ValidateQueryFunctions.validateQuery(query, this.datasetController.getSectionDatasets(), "section")) {
+				queryType = "section";
+				datasets = this.datasetController.getSectionDatasets();
+			} else if (ValidateQueryFunctions.validateQuery(query, this.datasetController.getRoomDatasets(), "room")) {
+				queryType = "room";
+				datasets = this.datasetController.getRoomDatasets();
 			} else {
 				return Promise.reject(new InsightError("Not a valid query."));
 			}
+			return Promise.resolve(
+				PerformQueryOptionsFunctions.performOPTIONS(
+					query,
+					PerformQueryTransformationsFunctions.performTRANSFORMATIONS(
+						query,
+						PerformQueryWhereFunctions.performWHERE(
+							query,
+							PerformQueryWhereFunctions.getQueriedDataset(query, datasets, queryType),
+							queryType
+						),
+						queryType
+					),
+					queryType
+				)
+			);
 		} else {
 			return Promise.reject(new InsightError("Not a query."));
 		}

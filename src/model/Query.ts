@@ -1,11 +1,12 @@
 export interface Query {
 	WHERE: Where;
 	OPTIONS: Options;
+	TRANSFORMATIONS?: Transformations;
 }
 
 export interface Options {
 	COLUMNS: string[];
-	ORDER?: string;
+	ORDER?: Order | string;
 }
 
 export interface Or {
@@ -62,4 +63,18 @@ export interface Not {
 
 export interface Is {
 	[key: string]: string;
+}
+
+export interface Order {
+	dir: "UP" | "DOWN";
+	keys: string[];
+}
+
+export interface Transformations {
+	GROUP: string[];
+	APPLY: ApplyRule[];
+}
+
+export interface ApplyRule {
+	[applyKey: string]: {[applyToken: string]: string};
 }
