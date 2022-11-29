@@ -14,17 +14,17 @@ interface JsonDataset {
 }
 
 interface JsonRoom {
-	fullname: string;
-	shortname: string;
-	number: string;
-	name: string;
-	address: string;
-	lat: number;
-	lon: number;
-	seats: number;
-	type: string;
-	furniture: string;
-	href: string;
+	_fullname: string;
+	_shortname: string;
+	_number: string;
+	_name: string;
+	_address: string;
+	_lat: number;
+	_lon: number;
+	_seats: number;
+	_type: string;
+	_furniture: string;
+	_href: string;
 }
 
 const DIR = "./data/room";
@@ -128,20 +128,20 @@ export class RoomDatasetController {
 	private parseDatasetFromDisk(json: object): RoomDataset {
 		const rooms: Room[] = [];
 		const results = json as unknown as JsonDataset;
-		const datasetInfo = results.datasetInfo;
+		const datasetInfo = results.datasetInfo as InsightDataset;
 		for (let room of results.rooms) {
 			const nRoom = new Room();
-			nRoom.setFullname(room.fullname);
-			nRoom.setShortname(room.shortname);
-			nRoom.setNumber(room.number);
-			nRoom.setName(room.name);
-			nRoom.setAddress(room.address);
-			nRoom.setLat(room.lat);
-			nRoom.setLon(room.lon);
-			nRoom.setSeats(room.seats);
-			nRoom.setType(room.type);
-			nRoom.setFurniture(room.furniture);
-			nRoom.setHref(room.href);
+			nRoom.setFullname(room._fullname);
+			nRoom.setShortname(room._shortname);
+			nRoom.setNumber(room._number);
+			nRoom.setName(room._name);
+			nRoom.setAddress(room._address);
+			nRoom.setLat(room._lat);
+			nRoom.setLon(room._lon);
+			nRoom.setSeats(room._seats);
+			nRoom.setType(room._type);
+			nRoom.setFurniture(room._furniture);
+			nRoom.setHref(room._href);
 			rooms.push(nRoom);
 		}
 		return new RoomDataset(datasetInfo.id, datasetInfo.numRows, rooms);

@@ -84,9 +84,9 @@ export class SectionDatasetController {
 	private parseDatasetFromDisk(json: object): SectionDataset {
 		const sections: Section[] = [];
 		const results = json as unknown as JsonDataset;
-		const datasetInfo = results.datasetInfo;
+		const datasetInfo = results.datasetInfo as InsightDataset;
 		for (let section of results.sections) {
-			sections.push(new Section(section));
+			sections.push(new Section(section).fixProperties(section));
 		}
 		return new SectionDataset(datasetInfo.id, datasetInfo.numRows, sections);
 	}

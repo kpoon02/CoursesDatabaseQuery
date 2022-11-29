@@ -4,7 +4,6 @@ import {expect, use} from "chai";
 import chaiHttp from "chai-http";
 
 describe("Server", function () {
-
 	let facade: InsightFacade;
 	let server: Server;
 

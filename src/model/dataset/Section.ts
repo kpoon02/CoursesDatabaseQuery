@@ -2,16 +2,16 @@ import {JsonSection} from "../../controller/dataset/SectionDatasetController";
 import {InsightError} from "../../controller/IInsightFacade";
 
 export class Section {
-	private readonly _dept: string; // JsonSection SUBJECT
-	private readonly _id: string; // JsonSection COURSE
-	private readonly _avg: number;
-	private readonly _instructor: string; // JsonSection PROFESSOR
-	private readonly _title: string;
-	private readonly _pass: number;
-	private readonly _fail: number;
-	private readonly _audit: number;
-	private readonly _uuid: string; // JsonSection ID
-	private readonly _year: number;
+	private _dept: string; // JsonSection SUBJECT
+	private _id: string; // JsonSection COURSE
+	private _avg: number;
+	private _instructor: string; // JsonSection PROFESSOR
+	private _title: string;
+	private _pass: number;
+	private _fail: number;
+	private _audit: number;
+	private _uuid: string; // JsonSection ID
+	private _year: number;
 
 	constructor(jsonSection: JsonSection) {
 		this._dept = jsonSection.Subject;
@@ -28,6 +28,22 @@ export class Section {
 		} else {
 			this._year = +jsonSection.Year;
 		}
+	}
+
+	// spaghetti code to make things work for reading from disk
+	public fixProperties(jsonSection: JsonSection): Section {
+		const json = jsonSection as unknown as Section;
+		this._dept = json._dept;
+		this._id = json._id;
+		this._avg = json._avg;
+		this._instructor = json._instructor;
+		this._title = json._title;
+		this._pass = json._pass;
+		this._fail = json._fail;
+		this._audit = json._audit;
+		this._uuid = json._uuid;
+		this._year = json._year;
+		return this;
 	}
 
 	public get dept(): string {
