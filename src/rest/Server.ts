@@ -129,7 +129,7 @@ export default class Server {
 			res.status(200).json({result: response});
 		} catch (err) {
 			console.log(err);
-			res.status(400).json({message: "Could not add dataset"});
+			res.status(400).json({error: "Could not add dataset"});
 		}
 	}
 
@@ -140,7 +140,7 @@ export default class Server {
 			res.status(200).json({result: response});
 		} catch (err) {
 			console.log(err);
-			res.status(400).json({message: "Could not perform query"});
+			res.status(400).json({error: "Could not perform query"});
 		}
 	}
 
@@ -154,11 +154,11 @@ export default class Server {
 			const isInsightError = (error: unknown): error is InsightError => error instanceof InsightError;
 			const isNotFoundError = (error: unknown): error is NotFoundError => error instanceof NotFoundError;
 			if (isInsightError(err)) {
-				res.status(400).json({message: "Could not add dataset - insight error"});
+				res.status(400).json({error: "Could not add dataset - insight error"});
 			} else if (isNotFoundError(err)) {
-				res.status(404).json({message: "Could not add dataset - not found error"});
+				res.status(404).json({error: "Could not add dataset - not found error"});
 			}
-			res.status(400).json({message: "Could not add dataset"});
+			res.status(400).json({error: "Could not add dataset"});
 		}
 	}
 
@@ -169,7 +169,7 @@ export default class Server {
 			res.status(200).json({result: response});
 		} catch (err) {
 			console.log(err);
-			res.status(400).json({message: "Could not list datasets"});
+			res.status(400).json({error: "Could not list datasets"});
 		}
 	}
 
