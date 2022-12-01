@@ -6,7 +6,112 @@
 		<link href="/style.css" rel="stylesheet" />
 	</head>
 	<body>
-		<button id="click-me-button" class="button" >Click Me!</button>
+		<div id="header">
+			<button id="submit-query-button" class="button" >Submit</button>
+			<button id="and-filter-button" class="button" >And</button>
+			<button id="or-filter-button" class="button" >Or</button>
+			<button id="not-filter-button" class="button" >Not</button>
+			<button id="lt-filter-button" class="button" >Less Than</button>
+			<button id="gt-filter-button" class="button" >Greater Than</button>
+			<button id="eq-filter-button" class="button" >Equal To</button>
+			<button id="is-filter-button" class="button" >Is</button>
+		</div>
+
+		<div id="sections-columns">
+			<fieldset>
+				<legend>Select visible columns (for sections)</legend>
+				<label>
+					<input type="checkbox" name="sections-columns" value="dept" onclick="addSectionColumns()">
+				</label>Department
+				<label>
+					<input type="checkbox" name="sections-columns" value="id" onclick="addSectionColumns()">
+				</label>ID
+				<label>
+					<input type="checkbox" name="sections-columns" value="avg" onclick="addSectionColumns()">
+				</label>Average
+				<label>
+					<input type="checkbox" name="sections-columns" value="instructor" onclick="addSectionColumns()">
+				</label>Instructor
+				<label>
+					<input type="checkbox" name="sections-columns" value="title" onclick="addSectionColumns()">
+				</label>Title
+				<label>
+					<input type="checkbox" name="sections-columns" value="pass" onclick="addSectionColumns()">
+				</label>Pass
+				<label>
+					<input type="checkbox" name="sections-columns" value="fail" onclick="addSectionColumns()">
+				</label>Fail
+				<label>
+					<input type="checkbox" name="sections-columns" value="audit" onclick="addSectionColumns()">
+				</label>Audit
+				<label>
+					<input type="checkbox" name="sections-columns" value="uuid" onclick="addSectionColumns()">
+				</label>UUID
+				<label>
+					<input type="checkbox" name="sections-columns" value="year" onclick="addSectionColumns()">
+				</label>Year
+			</fieldset>
+		</div>
+
+		<div id="rooms-columns">
+			<fieldset>
+				<legend>Select visible columns (for rooms)</legend>
+				<label>
+					<input type="checkbox" name="rooms-columns" value="fullname" onclick="addRoomColumns()">
+				</label>Full Name
+				<label>
+					<input type="checkbox" name="rooms-columns" value="shortname" onclick="addRoomColumns()">
+				</label>Short Name
+				<label>
+					<input type="checkbox" name="rooms-columns" value="number" onclick="addRoomColumns()">
+				</label>Number
+				<label>
+					<input type="checkbox" name="rooms-columns" value="name" onclick="addRoomColumns()">
+				</label>Name
+				<label>
+					<input type="checkbox" name="rooms-columns" value="address" onclick="addRoomColumns()">
+				</label>Address
+				<label>
+					<input type="checkbox" name="rooms-columns" value="lat" onclick="addRoomColumns()">
+				</label>Latitude
+				<label>
+					<input type="checkbox" name="rooms-columns" value="lon" onclick="addRoomColumns()">
+				</label>Longitude
+				<label>
+					<input type="checkbox" name="rooms-columns" value="seats" onclick="addRoomColumns()">
+				</label>Seats
+				<label>
+					<input type="checkbox" name="rooms-columns" value="type" onclick="addRoomColumns()">
+				</label>Type
+				<label>
+					<input type="checkbox" name="rooms-columns" value="furniture" onclick="addRoomColumns()">
+				</label>Furniture
+				<label>
+					<input type="checkbox" name="rooms-columns" value="href" onclick="addRoomColumns()">
+				</label>HREF
+			</fieldset>
+		</div>
+
+		<div id="history-tab">
+			<button id="history-button" class="button" >History</button>
+			<button id="history-1-button" class="button" style="background-color: #A9A9A9" disabled>1</button>
+			<button id="history-2-button" class="button" style="background-color: #A9A9A9" disabled>2</button>
+			<button id="history-3-button" class="button" style="background-color: #A9A9A9" disabled>3</button>
+			<button id="history-4-button" class="button" style="background-color: #A9A9A9" disabled>4</button>
+			<button id="history-5-button" class="button" style="background-color: #A9A9A9" disabled>5</button>
+			<button id="clear-history-button" class="button" style="background-color: #A9A9A9" disabled>Clear History</button>
+		</div>
+
+		<pre id="query-json-display" style="float: left;border-style: double;border-width: medium;width: 49%"></pre>
+
+		<pre id="query-result-display" style="float: right;border-style: double;border-width: medium;width: 49%"></pre>
+
+		<div id="myModal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<p id="modal-text"></p>
+			</div>
+		</div>
 
 		<script type="text/javascript" src="/frontend.js"></script>
 	</body>

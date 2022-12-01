@@ -22,7 +22,7 @@ export default class Server {
 		// NOTE: you can serve static frontend files in from your express server
 		// by uncommenting the line below. This makes files in ./frontend/public
 		// accessible at http://localhost:<port>/
-		// this.express.use(express.static("./frontend/public"))
+		this.express.use(express.static("./frontend/public"));
 	}
 
 	/**
@@ -93,6 +93,8 @@ export default class Server {
 		this.express.post("/query", Server.post);
 		this.express.delete("/dataset/:id", Server.delete);
 		this.express.get("/datasets", Server.get);
+		this.express.get("/history", Server.history);
+		this.express.post("/history/query", Server.historyQuery);
 	}
 
 	// The next two methods handle the echo service.
@@ -136,6 +138,7 @@ export default class Server {
 		try {
 			const response = await Server.insightFacade.performQuery(req.body);
 			res.status(200).json({result: response});
+			Server.insightFacade.saveQuery(req.body);
 		} catch (err) {
 			console.log(err);
 			res.status(400).json({error: "Could not perform query"});
@@ -162,5 +165,27 @@ export default class Server {
 	private static async get(req: Request, res: Response) {
 		const response = await Server.insightFacade.listDatasets();
 		res.status(200).json({result: response});
+	}
+
+	private static history(req: Request, res: Response) {
+		const insightFacade: InsightFacade = new InsightFacade();
+		try {
+			const response = insightFacade.getHistory();
+			res.status(200).json({result: response});
+		} catch (err) {
+			console.log(err);
+			res.status(400).json({message: "Could not retrieve history"});
+		}
+	}
+
+	private static async historyQuery(req: Request, res: Response) {
+		const insightFacade: InsightFacade = new InsightFacade();
+		try {
+			const response = await insightFacade.performQuery(req.body);
+			res.status(200).json({result: response});
+		} catch (err) {
+			console.log(err);
+			res.status(400).json({message: "Could not perform query"});
+		}
 	}
 }

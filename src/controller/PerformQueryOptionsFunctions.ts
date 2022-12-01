@@ -2,7 +2,6 @@ import {Query} from "../model/Query";
 import {Section} from "../model/dataset/Section";
 import {Room} from "../model/dataset/Room";
 import {InsightResult} from "./IInsightFacade";
-import {PerformQueryTransformationsFunctions} from "./PerformQueryTransformationsFunctions";
 import {ValidateQueryStrings} from "./ValidateQueryStrings";
 import {ValidateQueryFunctions} from "./ValidateQueryFunctions";
 
@@ -24,7 +23,7 @@ export class PerformQueryOptionsFunctions {
 		if (q.TRANSFORMATIONS?.APPLY !== undefined) {
 			return filteredEntries as InsightResult[];
 		}
-		let filteredEntriesArray = [];
+		let filteredEntriesArray;
 		let cols: InsightResult[] = [];
 		if (queryType === "section") {
 			filteredEntriesArray = filteredEntries as Section[];

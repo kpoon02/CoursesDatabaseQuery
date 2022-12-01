@@ -5,6 +5,7 @@ import {PerformQueryWhereFunctions} from "./PerformQueryWhereFunctions";
 import {PerformQueryTransformationsFunctions} from "./PerformQueryTransformationsFunctions";
 import {DatasetController} from "./dataset/DatasetController";
 import {PerformQueryOptionsFunctions} from "./PerformQueryOptionsFunctions";
+import * as fs from "fs-extra";
 
 /**
  * This is the main programmatic entry point for the project.
@@ -25,6 +26,43 @@ export default class InsightFacade implements IInsightFacade {
 
 	public removeDataset(id: string): Promise<string> {
 		return Promise.resolve(this.datasetController.removeDataset(id));
+	}
+
+	// don't think this works if this is called before adding a valid dataset
+	public saveQuery(query: Query) {
+		const dir = "./data/history";
+		let history: Query[] = [];
+		if (!fs.existsSync(dir)) {
+			fs.mkdirSync(dir);
+		}
+		if (fs.existsSync(dir + "/history.json")) {
+			history = JSON.parse(fs.readFileSync(dir + "/history.json").toString());
+			if (history.length === 5) {
+				history[0] = history[1];
+				history[1] = history[2];
+				history[2] = history[3];
+				history[3] = history[4];
+				history[4] = query;
+			} else {
+				history.push(query);
+			}
+			fs.writeFileSync(dir + "/history.json", JSON.stringify(history));
+		} else {
+			history.push(query);
+			fs.writeFileSync(dir + "/history.json", JSON.stringify(history));
+		}
+	}
+
+	// don't think this works if this is called before adding a valid dataset
+	public getHistory(): Query[] {
+		const dir = "./data/history";
+		if (!fs.existsSync(dir)) {
+			fs.mkdirSync(dir);
+		}
+		if (!fs.existsSync(dir + "/history.json")) {
+			fs.writeFileSync(dir + "/history.json", JSON.stringify([]));
+		}
+		return JSON.parse(fs.readFileSync(dir + "/history.json").toString());
 	}
 
 	public performQuery(query: unknown): Promise<InsightResult[]> {
@@ -57,7 +95,7 @@ export default class InsightFacade implements IInsightFacade {
 						query,
 						PerformQueryWhereFunctions.performWHERE(
 							query,
-							PerformQueryWhereFunctions.getQueriedDataset(query, datasets, queryType),
+							PerformQueryWhereFunctions.getQueriedDataset(query, datasets),
 							queryType
 						),
 						queryType

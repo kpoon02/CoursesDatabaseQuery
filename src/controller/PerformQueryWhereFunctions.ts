@@ -2,11 +2,8 @@ import {Query, Where} from "../model/Query";
 import {Section} from "../model/dataset/Section";
 import {SectionDataset} from "../model/dataset/SectionDataset";
 import {ValidateQueryFunctions} from "./ValidateQueryFunctions";
-import {InsightError, InsightResult, ResultTooLargeError} from "./IInsightFacade";
-import InsightFacade from "./InsightFacade";
-import {PerformQueryTransformationsFunctions} from "./PerformQueryTransformationsFunctions";
+import {InsightError, ResultTooLargeError} from "./IInsightFacade";
 import {RoomDataset} from "../model/dataset/RoomDataset";
-import {ValidateQueryStrings} from "./ValidateQueryStrings";
 import {Room} from "../model/dataset/Room";
 
 export class PerformQueryWhereFunctions {
@@ -15,7 +12,7 @@ export class PerformQueryWhereFunctions {
 		dataset: SectionDataset | RoomDataset,
 		queryType: string
 	): Section[] | Room[] {
-		let result = [];
+		let result;
 		if (queryType === "section") {
 			dataset = dataset as SectionDataset;
 			result = this.performFilter(query, query.WHERE, dataset.getSections(), queryType);
@@ -32,8 +29,7 @@ export class PerformQueryWhereFunctions {
 
 	public static getQueriedDataset(
 		q: Query,
-		datasets: SectionDataset[] | RoomDataset[],
-		queryType: string
+		datasets: SectionDataset[] | RoomDataset[]
 	): SectionDataset | RoomDataset {
 		let queriedDatasetId: string;
 		queriedDatasetId = ValidateQueryFunctions.getDatasetId(q);
@@ -103,7 +99,7 @@ export class PerformQueryWhereFunctions {
 		}
 	}
 
-	private static performOR(filter: Where, q: Query, entries: Section[] | Room[], queryType: string | string) {
+	private static performOR(filter: Where, q: Query, entries: Section[] | Room[], queryType: string) {
 		if (filter.OR === undefined) {
 			return [];
 		}
