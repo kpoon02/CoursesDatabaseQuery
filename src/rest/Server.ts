@@ -1,18 +1,20 @@
 import express, {Application, Request, Response} from "express";
 import * as http from "http";
 import cors from "cors";
-import {IInsightFacade, InsightDatasetKind, InsightError, NotFoundError} from "../controller/IInsightFacade";
+import {InsightDatasetKind, InsightError, NotFoundError} from "../controller/IInsightFacade";
 import InsightFacade from "../controller/InsightFacade";
 
 export default class Server {
 	private readonly port: number;
 	private express: Application;
 	private server: http.Server | undefined;
+	private static insightFacade: InsightFacade;
 
 	constructor(port: number) {
 		console.info(`Server::<init>( ${port} )`);
 		this.port = port;
 		this.express = express();
+		Server.insightFacade = new InsightFacade();
 
 		this.registerMiddleware();
 		this.registerRoutes();
@@ -74,7 +76,7 @@ export default class Server {
 
 	// Registers middleware to parse request before passing them to request handlers
 	private registerMiddleware() {
-		// JSON parser must be place before raw parser because of wildcard matching done by raw parser below
+		// JSON parser must be placed before raw parser because of wildcard matching done by raw parser below
 		this.express.use(express.json());
 		this.express.use(express.raw({type: "application/*", limit: "10mb"}));
 
@@ -86,9 +88,7 @@ export default class Server {
 	private registerRoutes() {
 		// This is an example endpoint this you can invoke by accessing this URL in your browser:
 		// http://localhost:4321/echo/hello
-		this.express.get("/echo/:msg", Server.echo);
-
-		// TODO: your other endpoints should go here
+		// this.express.get("/echo/:msg", Server.echo);
 		this.express.put("/dataset/:id/:kind", Server.put);
 		this.express.post("/query", Server.post);
 		this.express.delete("/dataset/:id", Server.delete);
@@ -98,30 +98,29 @@ export default class Server {
 	// The next two methods handle the echo service.
 	// These are almost certainly not the best place to put these, but are here for your reference.
 	// By updating the Server.echo function pointer above, these methods can be easily moved.
-	private static echo(req: Request, res: Response) {
-		try {
-			console.log(`Server::echo(..) - params: ${JSON.stringify(req.params)}`);
-			const response = Server.performEcho(req.params.msg);
-			res.status(200).json({result: response});
-		} catch (err) {
-			res.status(400).json({error: err});
-		}
-	}
-
-	private static performEcho(msg: string): string {
-		if (typeof msg !== "undefined" && msg !== null) {
-			return `${msg}...${msg}`;
-		} else {
-			return "Message not provided";
-		}
-	}
+	// private static echo(req: Request, res: Response) {
+	// 	try {
+	// 		console.log(`Server::echo(..) - params: ${JSON.stringify(req.params)}`);
+	// 		const response = Server.performEcho(req.params.msg);
+	// 		res.status(200).json({result: response});
+	// 	} catch (err) {
+	// 		res.status(400).json({error: err});
+	// 	}
+	// }
+	//
+	// private static performEcho(msg: string): string {
+	// 	if (typeof msg !== "undefined" && msg !== null) {
+	// 		return `${msg}...${msg}`;
+	// 	} else {
+	// 		return "Message not provided";
+	// 	}
+	// }
 
 	private static async put(req: Request, res: Response) {
-		const insightFacade: IInsightFacade = new InsightFacade();
 		try {
 			let contentBuff = req.body as Buffer;
 			const content = contentBuff.toString("base64");
-			const response = await insightFacade.addDataset(
+			const response = await Server.insightFacade.addDataset(
 				req.params.id,
 				content,
 				req.params.kind as InsightDatasetKind
@@ -134,9 +133,8 @@ export default class Server {
 	}
 
 	private static async post(req: Request, res: Response) {
-		const insightFacade: IInsightFacade = new InsightFacade();
 		try {
-			const response = await insightFacade.performQuery(req.body);
+			const response = await Server.insightFacade.performQuery(req.body);
 			res.status(200).json({result: response});
 		} catch (err) {
 			console.log(err);
@@ -145,32 +143,24 @@ export default class Server {
 	}
 
 	private static async delete(req: Request, res: Response) {
-		const insightFacade: IInsightFacade = new InsightFacade();
 		try {
-			const response = await insightFacade.removeDataset(req.params.id);
+			const response = await Server.insightFacade.removeDataset(req.params.id);
 			res.status(200).json({result: response});
 		} catch (err) {
 			console.log(err);
 			const isInsightError = (error: unknown): error is InsightError => error instanceof InsightError;
 			const isNotFoundError = (error: unknown): error is NotFoundError => error instanceof NotFoundError;
 			if (isInsightError(err)) {
-				res.status(400).json({error: "Could not add dataset - insight error"});
+				res.status(400).json({error: "Could not delete dataset - insight error"});
 			} else if (isNotFoundError(err)) {
-				res.status(404).json({error: "Could not add dataset - not found error"});
+				res.status(404).json({error: "Could not delete dataset - not found error"});
 			}
-			res.status(400).json({error: "Could not add dataset"});
+			res.status(400).json({error: "Could not delete dataset"});
 		}
 	}
 
 	private static async get(req: Request, res: Response) {
-		const insightFacade: IInsightFacade = new InsightFacade();
-		try {
-			const response = await insightFacade.listDatasets();
-			res.status(200).json({result: response});
-		} catch (err) {
-			console.log(err);
-			res.status(400).json({error: "Could not list datasets"});
-		}
+		const response = await Server.insightFacade.listDatasets();
+		res.status(200).json({result: response});
 	}
-
 }
