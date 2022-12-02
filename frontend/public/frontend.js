@@ -104,6 +104,7 @@ async function handleSubmitButton() {
 	});
 	const result = await response.json();
 	if (response.status === 200) {
+		alert("Query submitted!")
 		displayResults(query["OPTIONS"]["COLUMNS"], result)
 	} else {
 		alert("Invalid query submitted!")
@@ -344,10 +345,19 @@ async function retrieveHistory() {
 	}
 }
 
-function clearHistory() {
+async function clearHistory() {
 	history = []
 	disableButtons(historyButtonIds)
-	// TODO potentially delete history in backend?
+	const response = await fetch('http://localhost:4321/history', {
+		method: 'DELETE'
+	});
+	let result = await response.json();
+	result = result.result
+	if (result === "Cleared") {
+		alert("History cleared!")
+	} else {
+		alert("Error clearing history!")
+	}
 }
 
 async function displayHistory(num) {

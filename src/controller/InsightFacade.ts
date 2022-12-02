@@ -65,6 +65,11 @@ export default class InsightFacade implements IInsightFacade {
 		return JSON.parse(fs.readFileSync(dir + "/history.json").toString());
 	}
 
+	public clearHistory(): string {
+		fs.removeSync("./data/history");
+		return "Cleared";
+	}
+
 	public performQuery(query: unknown): Promise<InsightResult[]> {
 		function isQuery(q: unknown): q is Query {
 			return (

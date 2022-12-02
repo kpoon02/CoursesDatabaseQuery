@@ -95,6 +95,7 @@ export default class Server {
 		this.express.get("/datasets", Server.get);
 		this.express.get("/history", Server.history);
 		this.express.post("/history/query", Server.historyQuery);
+		this.express.delete("/history", Server.clearHistory);
 	}
 
 	// The next two methods handle the echo service.
@@ -168,9 +169,8 @@ export default class Server {
 	}
 
 	private static history(req: Request, res: Response) {
-		const insightFacade: InsightFacade = new InsightFacade();
 		try {
-			const response = insightFacade.getHistory();
+			const response = Server.insightFacade.getHistory();
 			res.status(200).json({result: response});
 		} catch (err) {
 			console.log(err);
@@ -179,13 +179,22 @@ export default class Server {
 	}
 
 	private static async historyQuery(req: Request, res: Response) {
-		const insightFacade: InsightFacade = new InsightFacade();
 		try {
-			const response = await insightFacade.performQuery(req.body);
+			const response = await Server.insightFacade.performQuery(req.body);
 			res.status(200).json({result: response});
 		} catch (err) {
 			console.log(err);
 			res.status(400).json({message: "Could not perform query"});
+		}
+	}
+
+	private static clearHistory(req: Request, res: Response) {
+		try {
+			const response = Server.insightFacade.clearHistory();
+			res.status(200).json({result: response});
+		} catch (err) {
+			console.log(err);
+			res.status(400).json({message: "Could not clear history"});
 		}
 	}
 }
