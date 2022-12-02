@@ -268,19 +268,29 @@ function displayResults(columns, results) {
 		content += "<th>" + column.split("_")[1] + "</th>"
 	}
 	content += "</tr></thead><tbody>"
-	for (let result of results) {
-		content += "<tr onclick='showDetails(\"" + result["sections_uuid"] + "\")'>"
-		for (let column of columns) {
-			content += "<td>" + result[column] + "</td>"
+	if (columns[0].split("_")[0] === "sections") {
+		for (let result of results) {
+			content += "<tr onclick='showDetailsSection(\"" + result["sections_uuid"] + "\")'>"
+			for (let column of columns) {
+				content += "<td>" + result[column] + "</td>"
+			}
+			content += "</tr>"
 		}
-		content += "</tr>"
+	} else {
+		for (let result of results) {
+			content += "<tr onclick='showDetailsRoom(\"" + result["rooms_name"] + "\")'>"
+			for (let column of columns) {
+				content += "<td>" + result[column] + "</td>"
+			}
+			content += "</tr>"
+		}
 	}
 	document.getElementById("query-result-display").innerHTML = content
 }
 
-async function showDetails(uuid) {
+async function showDetailsSection(uuid) {
 	if (uuid === "undefined") {
-		alert("Results must include the UUID (Sections) or the Short Name (Rooms) in order to view full details!")
+		alert("Results must include the UUID (Sections) or the Name (Rooms) in order to view full details!")
 	} else {
 		const detailQuery = {
 			"WHERE": {
@@ -303,26 +313,60 @@ async function showDetails(uuid) {
 				]
 			}
 		}
-		const response = await fetch('http://localhost:4321/query', {
-			method: 'POST',
-			body: JSON.stringify(detailQuery),
-			headers: {
-				'Content-Type': 'application/json'
-			}
-		});
-		let result = await response.json();
+		await displayDetails(detailQuery)
+	}
+}
 
-		result = result.result
-		let text = ""
-		for (let key of Object.keys(result[0])) {
-			text += "<b>" + key.split("_")[1] + ":</b> " + result[0][key] + "<br>"
+async function showDetailsRoom(name) {
+	if (name === "undefined") {
+		alert("Results must include the UUID (Sections) or the Name (Rooms) in order to view full details!")
+	} else {
+		const detailQuery = {
+			"WHERE": {
+				"IS": {
+					"rooms_name": name
+				}
+			},
+			"OPTIONS": {
+				"COLUMNS": [
+					"rooms_fullname",
+					"rooms_shortname",
+					"rooms_number",
+					"rooms_name",
+					"rooms_address",
+					"rooms_lat",
+					"rooms_lon",
+					"rooms_seats",
+					"rooms_type",
+					"rooms_furniture",
+					"rooms_href"
+				]
+			}
 		}
-		document.getElementById("modal-text").innerHTML = text
-		let span = document.getElementsByClassName("close")[0]
-		modal.style.display = "block"
-		span.onclick = function() {
-			modal.style.display = "none";
+		await displayDetails(detailQuery)
+	}
+}
+
+async function displayDetails(detailQuery) {
+	const response = await fetch('http://localhost:4321/query', {
+		method: 'POST',
+		body: JSON.stringify(detailQuery),
+		headers: {
+			'Content-Type': 'application/json'
 		}
+	});
+	let result = await response.json();
+
+	result = result.result
+	let text = ""
+	for (let key of Object.keys(result[0])) {
+		text += "<b>" + key.split("_")[1] + ":</b> " + result[0][key] + "<br>"
+	}
+	document.getElementById("modal-text").innerHTML = text
+	let span = document.getElementsByClassName("close")[0]
+	modal.style.display = "block"
+	span.onclick = function () {
+		modal.style.display = "none";
 	}
 }
 
